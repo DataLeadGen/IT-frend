@@ -5,6 +5,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
   
+  console.log('DOM fully loaded - initializing components');
+  
   // Initialize all components
   initPreloader();
   initNavigation();
@@ -18,12 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.querySelector('.loader-wrapper');
     
     if (preloader) {
+      // Hide preloader after a short delay
+      setTimeout(function() {
+        preloader.classList.add('hidden');
+        // Enable scrolling after preloader is hidden
+        document.body.style.overflow = 'visible';
+      }, 800);
+      
+      // Also bind to window load event as a fallback
       window.addEventListener('load', function() {
-        setTimeout(function() {
-          preloader.classList.add('hidden');
-          // Enable scrolling after preloader is hidden
-          document.body.style.overflow = 'visible';
-        }, 500);
+        preloader.classList.add('hidden');
+        document.body.style.overflow = 'visible';
       });
       
       // Disable scrolling while preloader is visible
@@ -148,8 +155,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize particles.js
   function initParticles() {
-    if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
-      particlesJS('particles-js', particlesConfig);
+    // Make sure the particles.js container exists
+    if (document.getElementById('particles-js')) {
+      // Try initialize on DOM ready
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', particlesConfig);
+      } else {
+        // Fallback: try again after a delay
+        console.log('Waiting for particles.js to load...');
+        setTimeout(function() {
+          if (typeof particlesJS !== 'undefined') {
+            particlesJS('particles-js', particlesConfig);
+          } else {
+            console.error('Could not initialize particles.js');
+          }
+        }, 1000);
+      }
     }
   }
   

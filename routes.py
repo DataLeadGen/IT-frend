@@ -6,6 +6,7 @@ from flask_mail import Message
 
 @app.route('/')
 def index():
+    app.logger.debug("Rendering index page")
     return render_template('index.html')
 
 @app.route('/about')
