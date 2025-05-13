@@ -70,9 +70,14 @@
                 </div>
             </div>
             <div class="about-image slide-in-right">
-                <img src="https://pixabay.com/get/g4d1ca31b63bac6cc7b6542f126168aa9679c25f2e02ab78facec49bd08aabe833005ec5e494e7629ec65c0901fe7947c0115b57f58fa9aedf2a016cf6693f706_1280.jpg" 
-                     alt="IT FRNDLeads Data Solutions Team" 
-                     loading="lazy">
+                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/team-illustration.svg') }}" 
+                        class="team-svg-animation" 
+                        aria-label="IT FRNDLeads Data Solutions Team Illustration">
+                    <!-- Fallback for older browsers -->
+                    <img src="{{ url_for('static', filename='svg/team-illustration.svg') }}" 
+                         alt="IT FRNDLeads Data Solutions Team" 
+                         class="img-fluid">
+                </object>
             </div>
         </div>
     </div>

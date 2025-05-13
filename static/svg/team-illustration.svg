@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="teamBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1E2F" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0D1B2A" stop-opacity="0.9"/>
+    </linearGradient>
+    
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#772CE8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.6"/>
+    </linearGradient>
+    
+    <linearGradient id="personGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#772CE8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="personGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF9100" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="personGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9100" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#772CE8" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1B2A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1B263B" stop-opacity="0.9"/>
+    </linearGradient>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#teamBgGradient)" rx="15" ry="15"/>
+  
+  <!-- Background grid pattern -->
+  <g opacity="0.1">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800 M0 400 H800 M0 450 H800" stroke="#00F5FF" stroke-width="1"/>
+    <path d="M50 0 V500 M100 0 V500 M150 0 V500 M200 0 V500 M250 0 V500 M300 0 V500 M350 0 V500 M400 0 V500 M450 0 V500 M500 0 V500 M550 0 V500 M600 0 V500 M650 0 V500 M700 0 V500 M750 0 V500" stroke="#00F5FF" stroke-width="1"/>
+  </g>
+  
+  <!-- Background glow effects -->
+  <circle cx="650" cy="100" r="80" fill="url(#glowGradient)" filter="blur(30px)" opacity="0.2"/>
+  <circle cx="150" cy="400" r="100" fill="url(#glowGradient)" filter="blur(40px)" opacity="0.15"/>
+  
+  <!-- Data flow visualization in background -->
+  <g opacity="0.3">
+    <path d="M100,100 C200,150 300,50 400,200 C500,350 600,250 700,300" stroke="#00F5FF" stroke-width="2" fill="none" stroke-dasharray="5,5" filter="url(#glow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="100" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M100,300 C200,250 300,350 400,200 C500,50 600,150 700,100" stroke="#772CE8" stroke-width="2" fill="none" stroke-dasharray="5,5" filter="url(#glow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Team collaboration visualization -->
+  <g transform="translate(400, 250)" filter="url(#shadow)">
+    <!-- Central Hub -->
+    <circle cx="0" cy="0" r="60" fill="#1B263B" stroke="#00F5FF" stroke-width="2"/>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="18" fill="#FFFFFF" text-anchor="middle">IT FRND</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="18" fill="#00F5FF" text-anchor="middle">Leads</text>
+    
+    <!-- Team members -->
+    <g id="person1" transform="translate(-180, -100)">
+      <circle cx="0" cy="0" r="40" fill="url(#personGradient1)"/>
+      <path d="M-15,-5 H15 M-10,5 H10 M-5,15 H5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">Data Team</text>
+    </g>
+    
+    <g id="person2" transform="translate(180, -100)">
+      <circle cx="0" cy="0" r="40" fill="url(#personGradient2)"/>
+      <path d="M-15,-5 H15 M-10,5 H10 M-5,15 H5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">IT Specialists</text>
+    </g>
+    
+    <g id="person3" transform="translate(-180, 100)">
+      <circle cx="0" cy="0" r="40" fill="url(#personGradient3)"/>
+      <path d="M-15,-5 H15 M-10,5 H10 M-5,15 H5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">Lead Generation</text>
+    </g>
+    
+    <g id="person4" transform="translate(180, 100)">
+      <circle cx="0" cy="0" r="40" fill="url(#personGradient1)"/>
+      <path d="M-15,-5 H15 M-10,5 H10 M-5,15 H5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" text-anchor="middle">Marketing</text>
+    </g>
+    
+    <!-- Connection lines -->
+    <line x1="-140" y1="-100" x2="-60" y2="0" stroke="url(#glowGradient)" stroke-width="3" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="140" y1="-100" x2="60" y2="0" stroke="url(#glowGradient)" stroke-width="3" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </line>
+    <line x1="-140" y1="100" x2="-60" y2="0" stroke="url(#glowGradient)" stroke-width="3" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </line>
+    <line x1="140" y1="100" x2="60" y2="0" stroke="url(#glowGradient)" stroke-width="3" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </line>
+    
+    <!-- Data pulse animations -->
+    <circle cx="-140" cy="-100" r="5" fill="#00F5FF">
+      <animate attributeName="cx" values="-140;-60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-100;0" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="140" cy="-100" r="5" fill="#00F5FF">
+      <animate attributeName="cx" values="140;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-100;0" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="-140" cy="100" r="5" fill="#00F5FF">
+      <animate attributeName="cx" values="-140;-60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;0" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="140" cy="100" r="5" fill="#00F5FF">
+      <animate attributeName="cx" values="140;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;0" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Digital elements -->
+  <g opacity="0.8" transform="translate(80, 80)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="url(#screenGradient)" stroke="#00F5FF" stroke-width="1"/>
+    <line x1="10" y1="15" x2="110" y2="15" stroke="#00F5FF" stroke-width="1" opacity="0.7"/>
+    <line x1="10" y1="30" x2="90" y2="30" stroke="#00F5FF" stroke-width="1" opacity="0.7"/>
+    <line x1="10" y1="45" x2="100" y2="45" stroke="#00F5FF" stroke-width="1" opacity="0.7"/>
+    <line x1="10" y1="60" x2="70" y2="60" stroke="#00F5FF" stroke-width="1" opacity="0.7"/>
+  </g>
+  
+  <g opacity="0.8" transform="translate(600, 380)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="url(#screenGradient)" stroke="#772CE8" stroke-width="1"/>
+    <circle cx="30" cy="25" r="15" fill="none" stroke="#772CE8" stroke-width="1"/>
+    <circle cx="30" cy="55" r="15" fill="none" stroke="#772CE8" stroke-width="1"/>
+    <circle cx="90" cy="25" r="15" fill="none" stroke="#772CE8" stroke-width="1"/>
+    <circle cx="90" cy="55" r="15" fill="none" stroke="#772CE8" stroke-width="1"/>
+    <line x1="30" y1="25" x2="90" y2="55" stroke="#772CE8" stroke-width="1"/>
+    <line x1="30" y1="55" x2="90" y2="25" stroke="#772CE8" stroke-width="1"/>
+  </g>
+  
+  <!-- Floating objects -->
+  <g>
+    <circle cx="700" cy="200" r="20" fill="none" stroke="#00F5FF" stroke-width="2" opacity="0.6">
+      <animate attributeName="cy" values="200;190;200" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="150" cy="150" r="15" fill="none" stroke="#772CE8" stroke-width="2" opacity="0.5">
+      <animate attributeName="cy" values="150;160;150" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="610" cy="450" r="25" fill="none" stroke="#FF9100" stroke-width="2" opacity="0.4">
+      <animate attributeName="cy" values="450;440;450" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title text -->
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle" opacity="0.9">IT FRNDLeads Data Solutions Team</text>
+</svg>
