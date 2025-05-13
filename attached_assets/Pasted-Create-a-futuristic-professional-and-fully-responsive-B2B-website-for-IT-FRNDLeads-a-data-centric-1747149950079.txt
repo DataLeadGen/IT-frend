@@ -1,0 +1,65 @@
+Create a futuristic, professional, and fully responsive B2B website for IT FRNDLeads, a data-centric IT Services and Consulting company based in Burhanpur, Madhya Pradesh. The website must align with the "Neon Nebula" visual identity, presenting the brand as cutting-edge, trustworthy, and conversion-focused.
+
+🖌️ Visual Design & Brand Identity
+🎨 Color Palette – Neon Nebula Theme (Use CSS Variables):
+
+--primary-bg: Deep Space Blue #0D1B2A – Base background tone
+
+--accent-dark: Magnetic Black #1E1E2F – Section backgrounds, footers
+
+--accent-violet: Electric Violet #772CE8 – UI accents, borders
+
+--highlight-cyan: Cosmic Cyan #00F5FF – Interactive elements, icons
+
+--cta-orange: Solar Orange #FF9100 – CTA buttons & highlights
+
+--highlight-yellow: Plasma Glow Yellow #FFD700 – Warnings, spot highlights
+
+--text-white: Starlight White #F8F9FA – Primary text
+
+💡 Design Tone: Futuristic, sleek, energetic, and data-driven with cosmic-inspired UI animations and clean B2B professional layout.
+
+🧬 Company Details
+Brand Name: IT FRNDLeads
+
+Tagline: Always 100% Updated Data For B2B Marketing & Sales
+
+Industry: IT Services & Consulting
+
+Location: Burhanpur, Madhya Pradesh
+
+Founded: 2018
+
+Website: theitfrnd.com
+
+Contact: +91 786-987-4458
+
+🔧 Core Services / Specializations:
+
+B2B Lead Generation
+
+Data Mining & List Building
+
+CRM Data Management
+
+Email & Contact Extraction
+
+Data Cleansing & Validation
+
+LinkedIn Prospecting
+
+Market Research & Targeting
+
+📜 Mission Statement (for About Page):
+“We are a small light in the hard darkness for your business. Our goal is to be the trusted friend of IT and Marketing industries, delivering approachable, accurate, and effective B2B data solutions.”
+
+🧱 Tech Stack & Architecture
+Frontend: HTML5, CSS3 (Flexbox & Grid), Vanilla JS, Particles.js
+
+Templating: Jinja2 (for dynamic HTML generation)
+
+Backend: Python Flask (route handling, contact form logic)
+
+Deployment: Heroku / Render / Vercel (static hosting + Flask deployment)
+
+Optimization: SEO meta tags
