@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.1"/>
+    </linearGradient>
+    
+    <linearGradient id="targetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9100" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF9100" stop-opacity="0.3"/>
+    </linearGradient>
+    
+    <linearGradient id="searchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#772CE8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#772CE8" stop-opacity="0.3"/>
+    </linearGradient>
+    
+    <!-- Glowing effects -->
+    <filter id="glow-effect" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="80" fill="#1E1E2F" opacity="0.5"/>
+  
+  <!-- Analytics Dashboard -->
+  <g id="dashboard" transform="translate(40, 50)">
+    <!-- Dashboard frame -->
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="none" stroke="#772CE8" stroke-width="2" opacity="0.7"/>
+    
+    <!-- Bar Chart -->
+    <g id="bar-chart" transform="translate(10, 10)">
+      <!-- Axes -->
+      <line x1="0" y1="50" x2="50" y2="50" stroke="#F8F9FA" stroke-width="1" opacity="0.7"/>
+      <line x1="0" y1="0" x2="0" y2="50" stroke="#F8F9FA" stroke-width="1" opacity="0.7"/>
+      
+      <!-- Bars -->
+      <rect x="5" y="30" width="5" height="20" fill="url(#chartGradient)" opacity="0.8">
+        <animate attributeName="height" values="0;20" dur="1s" begin="0s" fill="freeze"/>
+        <animate attributeName="y" values="50;30" dur="1s" begin="0s" fill="freeze"/>
+      </rect>
+      
+      <rect x="15" y="15" width="5" height="35" fill="url(#chartGradient)" opacity="0.8">
+        <animate attributeName="height" values="0;35" dur="1s" begin="0.2s" fill="freeze"/>
+        <animate attributeName="y" values="50;15" dur="1s" begin="0.2s" fill="freeze"/>
+      </rect>
+      
+      <rect x="25" y="25" width="5" height="25" fill="url(#chartGradient)" opacity="0.8">
+        <animate attributeName="height" values="0;25" dur="1s" begin="0.4s" fill="freeze"/>
+        <animate attributeName="y" values="50;25" dur="1s" begin="0.4s" fill="freeze"/>
+      </rect>
+      
+      <rect x="35" y="10" width="5" height="40" fill="url(#chartGradient)" opacity="0.8">
+        <animate attributeName="height" values="0;40" dur="1s" begin="0.6s" fill="freeze"/>
+        <animate attributeName="y" values="50;10" dur="1s" begin="0.6s" fill="freeze"/>
+      </rect>
+    </g>
+    
+    <!-- Pie Chart -->
+    <g id="pie-chart" transform="translate(80, 30)">
+      <!-- Pie segments -->
+      <path d="M0,0 L20,0 A20,20 0 0,1 10,17.32 z" fill="#00F5FF" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8" dur="0.5s" begin="0.8s" fill="freeze"/>
+      </path>
+      
+      <path d="M0,0 L10,17.32 A20,20 0 0,1 -10,17.32 z" fill="#772CE8" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8" dur="0.5s" begin="1.0s" fill="freeze"/>
+      </path>
+      
+      <path d="M0,0 L-10,17.32 A20,20 0 0,1 -20,0 z" fill="#FF9100" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8" dur="0.5s" begin="1.2s" fill="freeze"/>
+      </path>
+      
+      <path d="M0,0 L-20,0 A20,20 0 0,1 0,-20 z" fill="#F8F9FA" opacity="0.8">
+        <animate attributeName="opacity" values="0;0.8" dur="0.5s" begin="1.4s" fill="freeze"/>
+      </path>
+      
+      <path d="M0,0 L0,-20 A20,20 0 0,1 20,0 z" fill="#772CE8" opacity="0.4">
+        <animate attributeName="opacity" values="0;0.4" dur="0.5s" begin="1.6s" fill="freeze"/>
+      </path>
+    </g>
+    
+    <!-- Data Points -->
+    <g id="data-points" transform="translate(10, 70)">
+      <circle cx="10" cy="0" r="2" fill="#00F5FF" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="30" cy="0" r="2" fill="#772CE8" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </circle>
+      
+      <circle cx="50" cy="0" r="2" fill="#FF9100" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </circle>
+      
+      <circle cx="70" cy="0" r="2" fill="#F8F9FA" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+      </circle>
+      
+      <circle cx="90" cy="0" r="2" fill="#772CE8" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Magnifying Glass -->
+  <g id="search" transform="translate(140, 50)">
+    <circle cx="0" cy="0" r="15" fill="none" stroke="url(#searchGradient)" stroke-width="3" filter="url(#glow-effect)"/>
+    <line x1="10" y1="10" x2="20" y2="20" stroke="#772CE8" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Pulsing effect -->
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#772CE8" stroke-width="1">
+      <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Target -->
+  <g id="target" transform="translate(60, 150)">
+    <!-- Target rings -->
+    <circle cx="0" cy="0" r="15" fill="none" stroke="url(#targetGradient)" stroke-width="3" filter="url(#glow-effect)"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#FF9100" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="5" fill="#FF9100" opacity="0.9"/>
+    
+    <!-- Pulsing effect -->
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#FF9100" stroke-width="1">
+      <animate attributeName="r" values="15;25;15" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Data Flow Animation -->
+  <g id="data-flow">
+    <!-- Flow from Dashboard to Target -->
+    <circle cx="100" cy="90" r="3" fill="#00F5FF">
+      <animate attributeName="cx" values="100;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="90;150" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Flow from Search to Target -->
+    <circle cx="140" cy="50" r="3" fill="#772CE8">
+      <animate attributeName="cx" values="140;60" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="50;150" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
