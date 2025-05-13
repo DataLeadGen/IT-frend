@@ -37,8 +37,11 @@
   --accent-dark: #e9ecef;        /* Lighter accent for sections */
   --text-color: #212529;         /* Dark text for contrast */
   --text-secondary: #495057;     /* Secondary text color */
+  --text-muted: #6c757d;         /* Muted text color */
   --card-bg: #ffffff;            /* White card background */
   --border-color: #dee2e6;       /* Light border color */
+  --section-bg: #f8f9fa;         /* Section background */
+  --section-alt-bg: #e9ecef;     /* Alternate section background */
   
   /* RGB values for rgba usage - Light Theme */
   --primary-bg-rgb: 248, 249, 250;
@@ -50,8 +53,14 @@
   --dark-overlay: rgba(33, 37, 41, 0.7);
   --light-overlay: rgba(248, 249, 250, 0.9);
   
-  /* Text colors */
-  --text-white: #212529;         /* Default text color for light theme */
+  /* Color adaptations for light theme */
+  --hero-title-color: linear-gradient(120deg, #212529 0%, var(--highlight-cyan) 80%);
+  --hero-text-color: #495057;
+  --heading-color: #212529;
+  --text-on-dark: #212529;
+  --services-text-color: #212529;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --section-title-color: #212529;
 }
 
 /* Dark Theme */
@@ -61,8 +70,11 @@
   --accent-dark: #1E1E2F;        /* Magnetic Black - sections, footer */
   --text-color: #F8F9FA;         /* Light text for contrast */
   --text-secondary: #B0B0B0;     /* Secondary text color */
+  --text-muted: #94a3b8;         /* Muted text color */
   --card-bg: #1B263B;            /* Dark card background */
   --border-color: #2c3e50;       /* Dark border color */
+  --section-bg: #0D1B2A;         /* Section background */
+  --section-alt-bg: #1E1E2F;     /* Alternate section background */
   
   /* RGB values for rgba usage - Dark Theme */
   --primary-bg-rgb: 13, 27, 42;
@@ -74,8 +86,14 @@
   --dark-overlay: rgba(13, 27, 42, 0.85);
   --light-overlay: rgba(248, 249, 250, 0.03);
   
-  /* Text colors */
-  --text-white: #F8F9FA;         /* Light text for dark theme */
+  /* Color adaptations for dark theme */
+  --hero-title-color: linear-gradient(120deg, #F8F9FA 0%, var(--highlight-cyan) 80%);
+  --hero-text-color: #B0B0B0;
+  --heading-color: #F8F9FA;
+  --text-on-dark: #F8F9FA;
+  --services-text-color: #F8F9FA;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --section-title-color: #F8F9FA;
 }
 
 :root {
@@ -533,7 +551,7 @@ a:hover {
   margin-bottom: var(--spacing-sm);
   line-height: 1.1;
   font-weight: 800;
-  background: linear-gradient(120deg, var(--text-color) 0%, var(--highlight-cyan) 70%);
+  background: var(--hero-title-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -565,7 +583,7 @@ a:hover {
   margin-bottom: var(--spacing-md);
   font-size: 1.1rem;
   max-width: 650px;
-  color: var(--text-secondary);
+  color: var(--hero-text-color);
   line-height: 1.8;
   position: relative;
   z-index: 1;
@@ -777,8 +795,9 @@ a:hover {
   Services Section
 =========================================*/
 .services-section {
-  background-color: var(--accent-dark);
+  background-color: var(--section-alt-bg);
   position: relative;
+  color: var(--services-text-color);
 }
 
 .services-grid {
@@ -877,6 +896,7 @@ a:hover {
   font-weight: 700;
   position: relative;
   display: inline-block;
+  transition: color 0.3s ease;
 }
 
 .service-title::after {
@@ -890,12 +910,17 @@ a:hover {
   transition: width 0.3s ease;
 }
 
+.service-card:hover .service-title {
+  color: var(--highlight-cyan);
+}
+
 .service-card:hover .service-title::after {
   width: 100%;
 }
 
 .service-description {
-  opacity: 0.85;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .service-link {
@@ -1095,6 +1120,7 @@ a:hover {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   font-weight: 700;
+  color: var(--section-title-color);
 }
 
 .section-title::after {
@@ -1184,8 +1210,7 @@ a:hover {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--text-color);
-  background: linear-gradient(90deg, var(--text-color) 0%, var(--highlight-cyan) 100%);
+  background: var(--hero-title-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
