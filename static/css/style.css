@@ -8,23 +8,59 @@
   CSS Variables / Color Palette
 =========================================*/
 :root {
-  /* Main theme colors */
-  --primary-bg: #0D1B2A;         /* Deep Space Blue - base bg */
-  --accent-dark: #1E1E2F;        /* Magnetic Black - sections, footer */
+  /* Theme transition */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease;
+  
+  /* Shared colors between themes */
   --accent-violet: #772CE8;      /* Electric Violet - accents, borders */
   --highlight-cyan: #00F5FF;     /* Cosmic Cyan - interactive elements */
   --cta-orange: #FF9100;         /* Solar Orange - CTA buttons */
   --highlight-yellow: #FFD700;   /* Plasma Glow Yellow - warnings, highlights */
-  --text-white: #F8F9FA;         /* Starlight White - primary text */
   
-  /* Additional shades */
-  --dark-overlay: rgba(13, 27, 42, 0.85);
-  --light-overlay: rgba(248, 249, 250, 0.03);
+  /* Additional effects */
   --glow-cyan: 0 0 10px rgba(0, 245, 255, 0.7);
   --glow-violet: 0 0 15px rgba(119, 44, 232, 0.6);
   --glow-orange: 0 0 15px rgba(255, 145, 0, 0.7);
+}
+
+/* Light Theme (default) */
+:root {
+  /* Main theme colors - Light */
+  --primary-bg: #f8f9fa;         /* Light background */
+  --accent-dark: #e9ecef;        /* Lighter accent for sections */
+  --text-color: #212529;         /* Dark text for contrast */
+  --text-secondary: #495057;     /* Secondary text color */
+  --card-bg: #ffffff;            /* White card background */
+  --border-color: #dee2e6;       /* Light border color */
   
-  /* Typography */
+  /* Overlays for light theme */
+  --dark-overlay: rgba(33, 37, 41, 0.7);
+  --light-overlay: rgba(248, 249, 250, 0.9);
+  
+  /* Text colors */
+  --text-white: #212529;         /* Default text color for light theme */
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  /* Main theme colors - Dark */
+  --primary-bg: #0D1B2A;         /* Deep Space Blue - base bg */
+  --accent-dark: #1E1E2F;        /* Magnetic Black - sections, footer */
+  --text-color: #F8F9FA;         /* Light text for contrast */
+  --text-secondary: #B0B0B0;     /* Secondary text color */
+  --card-bg: #1B263B;            /* Dark card background */
+  --border-color: #2c3e50;       /* Dark border color */
+  
+  /* Overlays for dark theme */
+  --dark-overlay: rgba(13, 27, 42, 0.85);
+  --light-overlay: rgba(248, 249, 250, 0.03);
+  
+  /* Text colors */
+  --text-white: #F8F9FA;         /* Light text for dark theme */
+}
+
+:root {
+  /* Typography - shared across themes */
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Space Grotesk', sans-serif;
   --font-mono: 'Roboto Mono', monospace;
@@ -58,11 +94,12 @@ html {
 
 body {
   background-color: var(--primary-bg);
-  color: var(--text-white);
+  color: var(--text-color);
   font-family: var(--font-primary);
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  transition: var(--theme-transition);
 }
 
 h1, h2, h3, h4, h5, h6 {
