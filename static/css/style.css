@@ -899,26 +899,416 @@ a:hover {
 }
 
 .service-link {
-  display: inline-block;
-  margin-top: var(--spacing-sm);
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--spacing-md);
   font-weight: 600;
-  color: var(--accent-violet);
-  transition: all var(--transition-fast);
+  color: var(--text-color);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  background: rgba(var(--accent-violet-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-violet-rgb), 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.service-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    rgba(var(--accent-violet-rgb), 0.1),
+    rgba(var(--highlight-cyan-rgb), 0.1));
+  border-radius: 50px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .service-link::after {
   content: '→';
-  margin-left: 5px;
-  transition: all var(--transition-fast);
+  margin-left: 8px;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+  position: relative;
+  top: 1px;
 }
 
 .service-link:hover {
   color: var(--highlight-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--highlight-cyan-rgb), 0.15);
+  border-color: rgba(var(--highlight-cyan-rgb), 0.3);
+}
+
+.service-link:hover::before {
+  transform: scaleX(1);
 }
 
 .service-link:hover::after {
-  margin-left: 10px;
+  margin-left: 12px;
+  transform: translateX(3px);
+}
+
+/*=========================================
+  Testimonials Section
+=========================================*/
+.testimonials-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, 
+    rgba(var(--accent-violet-rgb), 0.05) 0%,
+    rgba(var(--accent-violet-rgb), 0.02) 50%,
+    transparent 80%);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.6;
+  filter: blur(40px);
+}
+
+.testimonials-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(var(--highlight-cyan-rgb), 0.03),
+    rgba(var(--accent-violet-rgb), 0.07));
+  border-radius: 20px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-content {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(var(--card-bg-rgb), 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--highlight-cyan);
+  opacity: 0.3;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .quote-icon {
+  opacity: 0.7;
+  transform: rotate(180deg) scale(1.1);
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  position: relative;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-violet), var(--highlight-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  color: white;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  box-shadow: 0 5px 15px rgba(var(--accent-violet-rgb), 0.3);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .author-avatar {
+  transform: scale(1.1);
+}
+
+.author-info {
+  flex: 1;
+}
+
+.author-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+  color: var(--text-color);
+}
+
+.author-position {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  position: relative;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--highlight-cyan), var(--accent-violet));
+  border-radius: 2px;
+}
+
+/*=========================================
+  CTA Section
+=========================================*/
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, 
+    rgba(var(--accent-violet-rgb), 0.05) 0%,
+    rgba(var(--highlight-cyan-rgb), 0.05) 100%);
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 150%;
+  background: radial-gradient(ellipse, 
+    rgba(var(--accent-violet-rgb), 0.05) 0%,
+    rgba(var(--accent-violet-rgb), 0.02) 50%,
+    transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  transform: rotate(-20deg);
+  animation: pulse 15s infinite alternate ease-in-out;
+  opacity: 0.6;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+    transform: rotate(-20deg) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: rotate(-15deg) scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: rotate(-25deg) scale(0.95);
+  }
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 20px;
+  background: rgba(var(--card-bg-rgb), 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--highlight-cyan-rgb), 0.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.cta-content {
+  flex: 1;
+  max-width: 650px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  background: linear-gradient(90deg, var(--text-color) 0%, var(--highlight-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.cta-button-container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button-container .btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.btn-icon {
+  margin-left: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.cta-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-circle,
+.floating-triangle,
+.floating-square,
+.floating-plus {
+  position: absolute;
+  opacity: 0.3;
+  animation: float-animation 10s infinite ease-in-out alternate;
+}
+
+.floating-circle {
+  top: 20%;
+  right: 30%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--highlight-cyan);
+  animation-delay: 0s;
+}
+
+.floating-triangle {
+  top: 50%;
+  right: 20%;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 52px solid var(--accent-violet);
+  opacity: 0.2;
+  animation-delay: 1s;
+}
+
+.floating-square {
+  bottom: 30%;
+  right: 35%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--cta-orange);
+  transform: rotate(45deg);
+  animation-delay: 2s;
+}
+
+.floating-plus {
+  bottom: 20%;
+  right: 15%;
+  width: 30px;
+  height: 30px;
+  opacity: 0.2;
+  animation-delay: 1.5s;
+}
+
+.floating-plus::before,
+.floating-plus::after {
+  content: '';
+  position: absolute;
+  background-color: var(--highlight-cyan);
+}
+
+.floating-plus::before {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+}
+
+.floating-plus::after {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 100%;
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-15px, 15px) rotate(5deg);
+  }
+  100% {
+    transform: translate(15px, -15px) rotate(-5deg);
+  }
 }
 
 /*=========================================
