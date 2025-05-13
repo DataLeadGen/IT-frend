@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for glowing effect -->
+    <linearGradient id="highlightGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#772CE8" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Filter for neon glow -->
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="80" fill="#1E1E2F" opacity="0.5"/>
+  
+  <!-- Animated dots forming a funnel shape -->
+  <g id="dots" fill="#00F5FF" opacity="0.8">
+    <!-- Top row of dots (wide part of funnel) -->
+    <circle cx="60" cy="50" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="80" cy="50" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.2s"/>
+    </circle>
+    <circle cx="100" cy="50" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <circle cx="120" cy="50" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="140" cy="50" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+    
+    <!-- Second row -->
+    <circle cx="70" cy="70" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <circle cx="90" cy="70" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="110" cy="70" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+    <circle cx="130" cy="70" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1.0s"/>
+    </circle>
+    
+    <!-- Third row -->
+    <circle cx="80" cy="90" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+    <circle cx="100" cy="90" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1.0s"/>
+    </circle>
+    <circle cx="120" cy="90" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    
+    <!-- Fourth row -->
+    <circle cx="90" cy="110" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    <circle cx="110" cy="110" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1.4s"/>
+    </circle>
+    
+    <!-- Bottom (narrow part of funnel) -->
+    <circle cx="100" cy="130" r="3">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" begin="1.6s"/>
+    </circle>
+  </g>
+  
+  <!-- Funnel outline -->
+  <path d="M60,55 L140,55 L120,115 L80,115 Z" fill="none" stroke="url(#highlightGlow)" stroke-width="2" opacity="0.8" filter="url(#neon-glow)"/>
+  
+  <!-- Data flow animation - dots moving through the funnel -->
+  <circle cx="100" cy="40" r="4" fill="#FF9100">
+    <animate attributeName="cy" values="40;140" dur="2s" repeatCount="indefinite" begin="0s"/>
+    <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="0s"/>
+  </circle>
+  
+  <circle cx="120" cy="40" r="4" fill="#FF9100">
+    <animate attributeName="cy" values="40;140" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    <animate attributeName="cx" values="120;100" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  
+  <circle cx="80" cy="40" r="4" fill="#FF9100">
+    <animate attributeName="cy" values="40;140" dur="2s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="cx" values="80;100" dur="2s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  
+  <!-- Target/Bullseye below the funnel -->
+  <circle cx="100" cy="150" r="15" fill="none" stroke="#772CE8" stroke-width="3" opacity="0.8"/>
+  <circle cx="100" cy="150" r="8" fill="none" stroke="#00F5FF" stroke-width="2" opacity="0.8"/>
+  <circle cx="100" cy="150" r="3" fill="#FF9100" opacity="0.8">
+    <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Pulse effect -->
+  <circle cx="100" cy="150" r="15" fill="none" stroke="#772CE8" stroke-width="1">
+    <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

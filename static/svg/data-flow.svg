@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for glowing effect -->
+    <linearGradient id="cyanglow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#00F5FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <linearGradient id="violetglow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#772CE8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#772CE8" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#772CE8" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <linearGradient id="orangeglow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9100" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#FF9100" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FF9100" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <!-- Filter for neon glow -->
+    <filter id="neon-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <filter id="neon-violet" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <filter id="neon-orange" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background network grid -->
+  <g id="background-grid">
+    <!-- Vertical lines -->
+    <line x1="100" y1="50" x2="100" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="200" y1="50" x2="200" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="300" y1="50" x2="300" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="400" y1="50" x2="400" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="500" y1="50" x2="500" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="600" y1="50" x2="600" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="700" y1="50" x2="700" y2="550" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Horizontal lines -->
+    <line x1="50" y1="100" x2="750" y2="100" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="50" y1="200" x2="750" y2="200" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="50" y1="300" x2="750" y2="300" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="50" y1="400" x2="750" y2="400" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+    <line x1="50" y1="500" x2="750" y2="500" stroke="#1E1E2F" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <!-- Server/Database Nodes -->
+  <g id="nodes">
+    <!-- Central Database Node -->
+    <circle cx="400" cy="300" r="30" fill="#0D1B2A" stroke="url(#cyanglow)" stroke-width="3" filter="url(#neon-cyan)"/>
+    <text x="400" y="300" text-anchor="middle" dominant-baseline="middle" fill="#00F5FF" font-family="monospace" font-size="8">MAIN DB</text>
+    
+    <!-- Satellite Nodes -->
+    <circle cx="200" cy="150" r="20" fill="#0D1B2A" stroke="url(#violetglow)" stroke-width="2" filter="url(#neon-violet)"/>
+    <text x="200" y="150" text-anchor="middle" dominant-baseline="middle" fill="#772CE8" font-family="monospace" font-size="7">NODE 1</text>
+    
+    <circle cx="600" cy="150" r="20" fill="#0D1B2A" stroke="url(#violetglow)" stroke-width="2" filter="url(#neon-violet)"/>
+    <text x="600" y="150" text-anchor="middle" dominant-baseline="middle" fill="#772CE8" font-family="monospace" font-size="7">NODE 2</text>
+    
+    <circle cx="200" cy="450" r="20" fill="#0D1B2A" stroke="url(#violetglow)" stroke-width="2" filter="url(#neon-violet)"/>
+    <text x="200" y="450" text-anchor="middle" dominant-baseline="middle" fill="#772CE8" font-family="monospace" font-size="7">NODE 3</text>
+    
+    <circle cx="600" cy="450" r="20" fill="#0D1B2A" stroke="url(#violetglow)" stroke-width="2" filter="url(#neon-violet)"/>
+    <text x="600" y="450" text-anchor="middle" dominant-baseline="middle" fill="#772CE8" font-family="monospace" font-size="7">NODE 4</text>
+    
+    <!-- Client Nodes -->
+    <rect x="80" y="280" width="40" height="40" rx="5" fill="#0D1B2A" stroke="url(#orangeglow)" stroke-width="2" filter="url(#neon-orange)"/>
+    <text x="100" y="300" text-anchor="middle" dominant-baseline="middle" fill="#FF9100" font-family="monospace" font-size="7">CLIENT</text>
+    
+    <rect x="680" y="280" width="40" height="40" rx="5" fill="#0D1B2A" stroke="url(#orangeglow)" stroke-width="2" filter="url(#neon-orange)"/>
+    <text x="700" y="300" text-anchor="middle" dominant-baseline="middle" fill="#FF9100" font-family="monospace" font-size="7">CLIENT</text>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g id="connections">
+    <!-- Main connections -->
+    <line x1="400" y1="300" x2="200" y2="150" stroke="#772CE8" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="400" y1="300" x2="600" y2="150" stroke="#772CE8" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="400" y1="300" x2="200" y2="450" stroke="#772CE8" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="400" y1="300" x2="600" y2="450" stroke="#772CE8" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="400" y1="300" x2="100" y2="300" stroke="#00F5FF" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="400" y1="300" x2="700" y2="300" stroke="#00F5FF" stroke-width="2" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </line>
+  </g>
+  
+  <!-- Data Packet Animations -->
+  <g id="data-packets">
+    <!-- Packet from Node 1 to Central -->
+    <circle cx="200" cy="150" r="4" fill="#772CE8">
+      <animate attributeName="cx" values="200;400" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="cy" values="150;300" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    
+    <!-- Packet from Node 2 to Central -->
+    <circle cx="600" cy="150" r="4" fill="#772CE8">
+      <animate attributeName="cx" values="600;400" dur="2s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="cy" values="150;300" dur="2s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <!-- Packet from Node 3 to Central -->
+    <circle cx="200" cy="450" r="4" fill="#772CE8">
+      <animate attributeName="cx" values="200;400" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="cy" values="450;300" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    
+    <!-- Packet from Node 4 to Central -->
+    <circle cx="600" cy="450" r="4" fill="#772CE8">
+      <animate attributeName="cx" values="600;400" dur="2s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="cy" values="450;300" dur="2s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    
+    <!-- Packet from Central to Client 1 -->
+    <rect x="390" y="290" width="8" height="8" fill="#00F5FF">
+      <animate attributeName="x" values="390;100" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+      <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+    </rect>
+    
+    <!-- Packet from Central to Client 2 -->
+    <rect x="400" y="300" width="8" height="8" fill="#00F5FF">
+      <animate attributeName="x" values="400;700" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+      <animate attributeName="opacity" values="1;0.8;0.2;1" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </rect>
+  </g>
+  
+  <!-- Pulsing effect on central node -->
+  <circle cx="400" cy="300" r="30" fill="none" stroke="#00F5FF" stroke-width="2">
+    <animate attributeName="r" values="30;40;30" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

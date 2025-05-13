@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for glowing effect -->
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#00F5FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.4"/>
+    </linearGradient>
+    
+    <linearGradient id="violetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#772CE8" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#772CE8" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#772CE8" stop-opacity="0.4"/>
+    </linearGradient>
+    
+    <!-- Filter for neon glow -->
+    <filter id="glow-effect" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="80" fill="#1E1E2F" opacity="0.5"/>
+  
+  <!-- Data records represented as rectangles with different states -->
+  <!-- Unprocessed data (messy/unorganized) -->
+  <g id="unprocessed-data" transform="translate(40,50)">
+    <rect x="0" y="0" width="50" height="10" rx="2" fill="#772CE8" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-5" y="15" width="40" height="10" rx="2" fill="#772CE8" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite" begin="0.2s"/>
+    </rect>
+    <rect x="10" y="30" width="45" height="10" rx="2" fill="#772CE8" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite" begin="0.4s"/>
+    </rect>
+    <rect x="-8" y="45" width="55" height="10" rx="2" fill="#772CE8" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    
+    <!-- "Errors" represented as small red squares -->
+    <rect x="42" y="3" width="4" height="4" fill="#FF3A41">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="32" y="18" width="4" height="4" fill="#FF3A41">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" begin="0.3s"/>
+    </rect>
+    <rect x="12" y="33" width="4" height="4" fill="#FF3A41">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    <rect x="22" y="48" width="4" height="4" fill="#FF3A41">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" begin="0.9s"/>
+    </rect>
+  </g>
+  
+  <!-- Processing visualization - animated filter/cleansing process -->
+  <g id="processing" transform="translate(80,60)">
+    <!-- Processing circle -->
+    <circle cx="20" cy="30" r="15" fill="none" stroke="url(#cyanGradient)" stroke-width="2" filter="url(#glow-effect)">
+      <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Inner spinning element - representing data processing -->
+    <g>
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="0 20 30" 
+        to="360 20 30" 
+        dur="4s" 
+        repeatCount="indefinite"/>
+      
+      <path d="M20,20 L20,24 M20,36 L20,40 M10,30 L14,30 M26,30 L30,30" stroke="#00F5FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M13,23 L16,26 M24,34 L27,37 M13,37 L16,34 M24,26 L27,23" stroke="#00F5FF" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    </g>
+    
+    <!-- Data particles flowing through -->
+    <circle cx="0" cy="30" r="3" fill="#772CE8">
+      <animate attributeName="cx" values="0;40" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="30" r="3" fill="#772CE8">
+      <animate attributeName="cx" values="0;40" dur="1s" repeatCount="indefinite" begin="0.33s"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite" begin="0.33s"/>
+    </circle>
+    
+    <circle cx="0" cy="30" r="3" fill="#772CE8">
+      <animate attributeName="cx" values="0;40" dur="1s" repeatCount="indefinite" begin="0.66s"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1s" repeatCount="indefinite" begin="0.66s"/>
+    </circle>
+  </g>
+  
+  <!-- Processed/clean data (organized/aligned) -->
+  <g id="clean-data" transform="translate(110,50)">
+    <rect x="0" y="0" width="50" height="10" rx="2" fill="#00F5FF" opacity="0.8"/>
+    <rect x="0" y="15" width="50" height="10" rx="2" fill="#00F5FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect x="0" y="30" width="50" height="10" rx="2" fill="#00F5FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect x="0" y="45" width="50" height="10" rx="2" fill="#00F5FF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+  </g>
+  
+  <!-- Checkmark appearing at the bottom -->
+  <g transform="translate(85,140)">
+    <circle cx="15" cy="15" r="15" fill="none" stroke="#FF9100" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0.8" dur="0.5s" begin="2s" fill="freeze"/>
+    </circle>
+    
+    <path d="M8,15 L13,20 L22,10" stroke="#FF9100" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.3s" fill="freeze"/>
+    </path>
+  </g>
+  
+  <!-- Label at the bottom -->
+  <text x="100" y="180" text-anchor="middle" fill="#F8F9FA" font-family="sans-serif" font-size="10" opacity="0.9">
+    DATA CLEANSING
+  </text>
+</svg>
