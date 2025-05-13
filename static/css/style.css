@@ -17,6 +17,13 @@
   --cta-orange: #FF9100;         /* Solar Orange - CTA buttons */
   --highlight-yellow: #FFD700;   /* Plasma Glow Yellow - warnings, highlights */
   
+  /* RGB Color values for rgba usage */
+  --accent-violet-rgb: 119, 44, 232;
+  --highlight-cyan-rgb: 0, 245, 255;
+  --cta-orange-rgb: 255, 145, 0;
+  --highlight-yellow-rgb: 255, 215, 0;
+  --card-bg-rgb: 30, 30, 47;
+  
   /* Additional effects */
   --glow-cyan: 0 0 10px rgba(0, 245, 255, 0.7);
   --glow-violet: 0 0 15px rgba(119, 44, 232, 0.6);
@@ -32,6 +39,12 @@
   --text-secondary: #495057;     /* Secondary text color */
   --card-bg: #ffffff;            /* White card background */
   --border-color: #dee2e6;       /* Light border color */
+  
+  /* RGB values for rgba usage - Light Theme */
+  --primary-bg-rgb: 248, 249, 250;
+  --accent-dark-rgb: 233, 236, 239;
+  --text-color-rgb: 33, 37, 41;
+  --card-bg-rgb: 255, 255, 255;
   
   /* Overlays for light theme */
   --dark-overlay: rgba(33, 37, 41, 0.7);
@@ -50,6 +63,12 @@
   --text-secondary: #B0B0B0;     /* Secondary text color */
   --card-bg: #1B263B;            /* Dark card background */
   --border-color: #2c3e50;       /* Dark border color */
+  
+  /* RGB values for rgba usage - Dark Theme */
+  --primary-bg-rgb: 13, 27, 42;
+  --accent-dark-rgb: 30, 30, 47;
+  --text-color-rgb: 248, 249, 250;
+  --card-bg-rgb: 27, 38, 59;
   
   /* Overlays for dark theme */
   --dark-overlay: rgba(13, 27, 42, 0.85);
@@ -441,59 +460,79 @@ a:hover {
 
 .btn {
   display: inline-block;
-  padding: 0.8rem 2rem;
-  border-radius: 4px;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
   font-weight: 600;
   font-family: var(--font-secondary);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all var(--transition-fast);
+  letter-spacing: 1.5px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   border: none;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
 }
 
 .btn::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 0;
+  left: -100%;
+  width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: all var(--transition-medium);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
   z-index: -1;
 }
 
 .btn:hover::before {
-  width: 100%;
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  letter-spacing: 2px;
+}
+
+.btn:active {
+  transform: translateY(2px);
 }
 
 .btn-primary {
-  background-color: var(--cta-orange);
-  color: var(--primary-bg);
-  box-shadow: 0 0 20px rgba(255, 145, 0, 0.4);
+  background: linear-gradient(135deg, var(--cta-orange), #ff5e62);
+  color: #fff;
+  box-shadow: 
+    0 5px 15px rgba(255, 145, 0, 0.3),
+    0 0 0 1px rgba(255, 94, 98, 0.1),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 25px rgba(255, 145, 0, 0.5);
+  box-shadow: 
+    0 8px 25px rgba(255, 145, 0, 0.4),
+    0 0 0 1px rgba(255, 94, 98, 0.2),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--text-white);
-  border: 2px solid var(--accent-violet);
-  box-shadow: 0 0 15px rgba(119, 44, 232, 0.3);
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--accent-violet), var(--highlight-cyan)) 1;
+  box-shadow: 0 5px 15px rgba(119, 44, 232, 0.15);
+  backdrop-filter: blur(5px);
 }
 
 .btn-secondary:hover {
-  border-color: var(--highlight-cyan);
+  background: linear-gradient(135deg, rgba(119, 44, 232, 0.1), rgba(0, 245, 255, 0.1));
   color: var(--highlight-cyan);
-  transform: translateY(-3px);
-  box-shadow: 0 7px 20px rgba(0, 245, 255, 0.3);
+  box-shadow: 
+    0 8px 25px rgba(119, 44, 232, 0.25),
+    0 0 0 1px rgba(0, 245, 255, 0.2);
 }
 
 /*=========================================
@@ -583,55 +622,109 @@ a:hover {
 }
 
 .service-card {
-  background: rgba(13, 27, 42, 0.5);
-  border-radius: 10px;
+  background: rgba(var(--card-bg-rgb, 30, 30, 47), 0.25);
+  border-radius: 20px;
   padding: var(--spacing-md);
-  transition: all var(--transition-medium);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(119, 44, 232, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   height: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(255, 255, 255, 0.05);
+  z-index: 1;
 }
 
 .service-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--highlight-cyan), var(--accent-violet));
-  transition: all var(--transition-medium);
-  transform: scaleX(0);
-  transform-origin: left;
+  inset: 0;
+  background: linear-gradient(125deg, 
+    rgba(var(--highlight-cyan-rgb, 0, 245, 255), 0.05) 0%, 
+    rgba(var(--accent-violet-rgb, 119, 44, 232), 0.08) 100%);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate3d(0, 0, 0);
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  border-color: rgba(119, 44, 232, 0.3);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(255, 255, 255, 0.1);
+  border-color: rgba(var(--highlight-cyan-rgb, 0, 245, 255), 0.2);
 }
 
 .service-card:hover::before {
-  transform: scaleX(1);
+  opacity: 1;
+}
+
+.service-card:hover::after {
+  opacity: 0.5;
 }
 
 .service-icon {
   font-size: 2.5rem;
   color: var(--highlight-cyan);
   margin-bottom: var(--spacing-sm);
-  transition: all var(--transition-medium);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 8px rgba(var(--highlight-cyan-rgb, 0, 245, 255), 0.3));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: rgba(var(--card-bg-rgb, 30, 30, 47), 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.1);
-  color: var(--cta-orange);
+  transform: scale(1.15) rotate(10deg);
+  filter: drop-shadow(0 0 15px rgba(var(--highlight-cyan-rgb, 0, 245, 255), 0.5));
+  background: rgba(var(--accent-violet-rgb, 119, 44, 232), 0.1);
 }
 
 .service-title {
-  font-size: 1.4rem;
-  margin-bottom: var(--spacing-sm);
-  color: var(--text-white);
+  font-size: 1.5rem;
+  margin: var(--spacing-sm) 0;
+  color: var(--text-color);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.service-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--highlight-cyan), transparent);
+  transition: width 0.3s ease;
+}
+
+.service-card:hover .service-title::after {
+  width: 100%;
 }
 
 .service-description {
