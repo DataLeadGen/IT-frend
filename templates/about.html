@@ -39,9 +39,14 @@
             </div>
             <div class="col-lg-6 fade-in">
                 <div class="about-image">
-                    <img src="https://pixabay.com/get/ge728d28010db24356675ae4ce74d8209f4e7b0fa0b97af7eb5e306a05903babe5ed28af4ca241033bb3ed065afbf75c600e9a61039c7050a3e52cb3f6985f349_1280.jpg" 
-                         alt="IT FRNDLeads Team Working" 
-                         loading="lazy">
+                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/company-mission.svg') }}" 
+                            class="svg-animation-container" 
+                            aria-label="IT FRNDLeads Company Mission">
+                        <!-- Fallback for older browsers -->
+                        <img src="{{ url_for('static', filename='svg/company-mission.svg') }}" 
+                             alt="IT FRNDLeads Company Mission" 
+                             class="img-fluid">
+                    </object>
                 </div>
             </div>
         </div>
@@ -157,10 +162,15 @@
             <div class="col-lg-4 col-md-6 mb-4 fade-in">
                 <div class="team-card text-center">
                     <div class="team-image mb-3">
-                        <img src="https://pixabay.com/get/g6960ef579c492cce44cba6f362f01fad99e16b69932d28d202ab296e22f1814109b157505bc699d8e80742bbdd5a97eb9a0b044ef4303c7a6dc921d01018537d_1280.jpg" 
-                             alt="Team Member" 
-                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-violet);"
-                             loading="lazy">
+                        <object type="image/svg+xml" data="{{ url_for('static', filename='svg/testimonial-avatar.svg') }}"
+                                class="team-avatar-svg"
+                                aria-label="Team Member Avatar"
+                                style="width: 150px; height: 150px; border-radius: 50%;">
+                            <!-- Fallback for older browsers -->
+                            <img src="{{ url_for('static', filename='svg/testimonial-avatar.svg') }}"
+                                 alt="Team Member Avatar"
+                                 style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent-violet);">
+                        </object>
                     </div>
                     <h4>Rahul Jain</h4>
                     <p class="text-gradient">Founder & CEO</p>
@@ -173,10 +183,15 @@
             <div class="col-lg-4 col-md-6 mb-4 fade-in">
                 <div class="team-card text-center">
                     <div class="team-image mb-3">
-                        <img src="https://pixabay.com/get/g6b5741180ca08060774d6ea3273b0ab18a634d6f699944c0749d57bdc2c560e7233f002c3ee9a6bd5ac434d5ede32bac0a8568729273a2eafb99e1de0a1e169f_1280.jpg" 
-                             alt="Team Member" 
-                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-violet);"
-                             loading="lazy">
+                        <object type="image/svg+xml" data="{{ url_for('static', filename='svg/testimonial-avatar.svg') }}"
+                                class="team-avatar-svg"
+                                aria-label="Team Member Avatar"
+                                style="width: 150px; height: 150px; border-radius: 50%;">
+                            <!-- Fallback for older browsers -->
+                            <img src="{{ url_for('static', filename='svg/testimonial-avatar.svg') }}"
+                                 alt="Team Member Avatar"
+                                 style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent-violet);">
+                        </object>
                     </div>
                     <h4>Anita Sharma</h4>
                     <p class="text-gradient">Head of Data Operations</p>
@@ -189,10 +204,15 @@
             <div class="col-lg-4 col-md-6 mb-4 fade-in">
                 <div class="team-card text-center">
                     <div class="team-image mb-3">
-                        <img src="https://pixabay.com/get/g25960918c2e2691ca176351654a1b1b5061988dbdaec81e24ec20900895e393658bf889f629104a029ed5698acfad2038de7d5d8bec43a673b13a86ba782b316_1280.jpg" 
-                             alt="Team Member" 
-                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-violet);"
-                             loading="lazy">
+                        <object type="image/svg+xml" data="{{ url_for('static', filename='svg/testimonial-avatar.svg') }}"
+                                class="team-avatar-svg"
+                                aria-label="Team Member Avatar"
+                                style="width: 150px; height: 150px; border-radius: 50%;">
+                            <!-- Fallback for older browsers -->
+                            <img src="{{ url_for('static', filename='svg/testimonial-avatar.svg') }}"
+                                 alt="Team Member Avatar"
+                                 style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent-violet);">
+                        </object>
                     </div>
                     <h4>Vikram Patel</h4>
                     <p class="text-gradient">Client Relations Manager</p>

@@ -30,10 +30,14 @@
         <div class="row align-items-center mb-5">
             <div class="col-lg-6 fade-in">
                 <div class="service-image">
-                    <img src="https://pixabay.com/get/gbe0826f2efa4ced251d55a96c6ff2a94983907dad4ebb4d07cfaadff053baf76d0758a59d2c761a028bef86cc13d375877299318ba999a6e6ae851c0c8198706_1280.jpg" 
-                         alt="B2B Lead Generation" 
-                         class="img-fluid rounded shadow"
-                         loading="lazy">
+                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/service-lead-database.svg') }}"
+                            class="svg-animation-container" 
+                            aria-label="B2B Lead Generation">
+                        <!-- Fallback for older browsers -->
+                        <img src="{{ url_for('static', filename='svg/service-lead-database.svg') }}"
+                             alt="B2B Lead Generation"
+                             class="img-fluid rounded shadow">
+                    </object>
                 </div>
             </div>
             <div class="col-lg-6 fade-in">
