@@ -17,6 +17,10 @@ def about():
 def services():
     return render_template('services.html')
 
+@app.route('/sample-leads')
+def sample_leads():
+    return render_template('sample_leads.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
