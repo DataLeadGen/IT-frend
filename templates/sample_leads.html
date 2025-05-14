@@ -1,0 +1,470 @@
+{% extends 'base.html' %}
+
+{% block title %}Sample Leads - IT FRNDLeads{% endblock %}
+
+{% block content %}
+<section class="sample-leads-hero">
+    <div class="container">
+        <div class="section-header slide-in-bottom">
+            <h2 class="section-title">Sample Leads Preview</h2>
+            <p class="section-subtitle">Quality B2B contacts tailored for the IT industry</p>
+        </div>
+    </div>
+</section>
+
+<section class="leads-showcase">
+    <div class="container">
+        <div class="leads-categories">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="tech">Technology</button>
+                <button class="category-tab" data-category="finance">Finance</button>
+                <button class="category-tab" data-category="healthcare">Healthcare</button>
+                <button class="category-tab" data-category="education">Education</button>
+            </div>
+            
+            <div class="leads-display">
+                <div class="category-content active" id="tech-content">
+                    <div class="leads-table-wrapper">
+                        <div class="leads-table-container">
+                            <div class="svg-animation-container">
+                                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-flow.svg') }}" class="data-flow-svg">
+                                    <!-- Fallback text -->
+                                    SVG not supported
+                                </object>
+                            </div>
+                            <table class="leads-table">
+                                <thead>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Position</th>
+                                        <th>Industry</th>
+                                        <th>Location</th>
+                                        <th>Data Accuracy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>CTO</td>
+                                        <td>Software Development</td>
+                                        <td>New York, US</td>
+                                        <td><div class="accuracy-badge high">99%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>IT Director</td>
+                                        <td>Cloud Services</td>
+                                        <td>London, UK</td>
+                                        <td><div class="accuracy-badge high">98%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>CIO</td>
+                                        <td>Enterprise Software</td>
+                                        <td>Berlin, Germany</td>
+                                        <td><div class="accuracy-badge medium">95%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>IT Manager</td>
+                                        <td>Cybersecurity</td>
+                                        <td>Toronto, Canada</td>
+                                        <td><div class="accuracy-badge high">97%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Tech Lead</td>
+                                        <td>AI Solutions</td>
+                                        <td>Singapore</td>
+                                        <td><div class="accuracy-badge medium">94%</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="data-protection-notice">
+                                <div class="icon-container">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <p>Actual company names and personal data have been anonymized to comply with data protection regulations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leads-features">
+                        <div class="feature-card slide-in-right">
+                            <div class="feature-icon">
+                                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/lead-generation.svg') }}" class="feature-svg">
+                                    <!-- Fallback -->
+                                    SVG not supported
+                                </object>
+                            </div>
+                            <h3>Verified Contacts</h3>
+                            <p>All tech sector leads are verified through our multi-step validation process to ensure accuracy and deliverability.</p>
+                        </div>
+                        <div class="feature-card slide-in-right" style="animation-delay: 0.2s;">
+                            <div class="feature-icon">
+                                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-cleansing.svg') }}" class="feature-svg">
+                                    <!-- Fallback -->
+                                    SVG not supported
+                                </object>
+                            </div>
+                            <h3>Decision Makers</h3>
+                            <p>Our technology leads database focuses exclusively on decision-makers with purchasing authority.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-content" id="finance-content">
+                    <div class="leads-table-wrapper">
+                        <div class="leads-table-container">
+                            <div class="svg-animation-container">
+                                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-finance.svg') }}" class="data-flow-svg">
+                                    <!-- Fallback text -->
+                                    SVG not supported
+                                </object>
+                            </div>
+                            <table class="leads-table">
+                                <thead>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Position</th>
+                                        <th>Industry</th>
+                                        <th>Location</th>
+                                        <th>Data Accuracy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>CFO</td>
+                                        <td>Financial Services</td>
+                                        <td>New York, US</td>
+                                        <td><div class="accuracy-badge high">98%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Finance Director</td>
+                                        <td>Banking</td>
+                                        <td>London, UK</td>
+                                        <td><div class="accuracy-badge high">97%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Financial Controller</td>
+                                        <td>Investment</td>
+                                        <td>Singapore</td>
+                                        <td><div class="accuracy-badge medium">95%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>VP Finance</td>
+                                        <td>Insurance</td>
+                                        <td>Toronto, Canada</td>
+                                        <td><div class="accuracy-badge high">96%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Financial Analyst</td>
+                                        <td>FinTech</td>
+                                        <td>Dubai, UAE</td>
+                                        <td><div class="accuracy-badge medium">93%</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="data-protection-notice">
+                                <div class="icon-container">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <p>Actual company names and personal data have been anonymized to comply with data protection regulations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-content" id="healthcare-content">
+                    <div class="leads-table-wrapper">
+                        <div class="leads-table-container">
+                            <div class="svg-animation-container">
+                                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-healthcare.svg') }}" class="data-flow-svg">
+                                    <!-- Fallback text -->
+                                    SVG not supported
+                                </object>
+                            </div>
+                            <table class="leads-table">
+                                <thead>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Position</th>
+                                        <th>Industry</th>
+                                        <th>Location</th>
+                                        <th>Data Accuracy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Medical Director</td>
+                                        <td>Hospital</td>
+                                        <td>Boston, US</td>
+                                        <td><div class="accuracy-badge high">97%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Healthcare CTO</td>
+                                        <td>Health Tech</td>
+                                        <td>Munich, Germany</td>
+                                        <td><div class="accuracy-badge high">98%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Head of Procurement</td>
+                                        <td>Medical Devices</td>
+                                        <td>Tokyo, Japan</td>
+                                        <td><div class="accuracy-badge medium">94%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>IT Director</td>
+                                        <td>Pharmaceutical</td>
+                                        <td>Basel, Switzerland</td>
+                                        <td><div class="accuracy-badge high">96%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Clinical Systems Manager</td>
+                                        <td>Healthcare Solutions</td>
+                                        <td>Melbourne, Australia</td>
+                                        <td><div class="accuracy-badge medium">93%</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="data-protection-notice">
+                                <div class="icon-container">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <p>Actual company names and personal data have been anonymized to comply with data protection regulations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-content" id="education-content">
+                    <div class="leads-table-wrapper">
+                        <div class="leads-table-container">
+                            <div class="svg-animation-container">
+                                <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-education.svg') }}" class="data-flow-svg">
+                                    <!-- Fallback text -->
+                                    SVG not supported
+                                </object>
+                            </div>
+                            <table class="leads-table">
+                                <thead>
+                                    <tr>
+                                        <th>Company</th>
+                                        <th>Position</th>
+                                        <th>Industry</th>
+                                        <th>Location</th>
+                                        <th>Data Accuracy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>University IT Director</td>
+                                        <td>Higher Education</td>
+                                        <td>Cambridge, UK</td>
+                                        <td><div class="accuracy-badge high">97%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>EdTech Procurement</td>
+                                        <td>Educational Technology</td>
+                                        <td>San Francisco, US</td>
+                                        <td><div class="accuracy-badge high">96%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Head of Digital Learning</td>
+                                        <td>K-12 Education</td>
+                                        <td>Stockholm, Sweden</td>
+                                        <td><div class="accuracy-badge medium">94%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>School Technology Officer</td>
+                                        <td>Primary Education</td>
+                                        <td>Sydney, Australia</td>
+                                        <td><div class="accuracy-badge high">95%</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="company-name">[Company name]</span></td>
+                                        <td>Director of e-Learning</td>
+                                        <td>Online Learning</td>
+                                        <td>Amsterdam, Netherlands</td>
+                                        <td><div class="accuracy-badge medium">92%</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="data-protection-notice">
+                                <div class="icon-container">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <p>Actual company names and personal data have been anonymized to comply with data protection regulations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="data-quality">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Our Data Quality Standards</h2>
+            <p class="section-subtitle">Why our leads convert better than the competition</p>
+        </div>
+        
+        <div class="quality-metrics">
+            <div class="quality-card">
+                <div class="quality-icon">
+                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-verification.svg') }}" class="quality-svg">
+                        <!-- Fallback -->
+                        SVG not supported
+                    </object>
+                </div>
+                <h3>Multi-Level Verification</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 99%"></div>
+                    </div>
+                    <span class="progress-value">99%</span>
+                </div>
+            </div>
+            
+            <div class="quality-card">
+                <div class="quality-icon">
+                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/email-deliverability.svg') }}" class="quality-svg">
+                        <!-- Fallback -->
+                        SVG not supported
+                    </object>
+                </div>
+                <h3>Email Deliverability</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 98%"></div>
+                    </div>
+                    <span class="progress-value">98%</span>
+                </div>
+            </div>
+            
+            <div class="quality-card">
+                <div class="quality-icon">
+                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/data-freshness.svg') }}" class="quality-svg">
+                        <!-- Fallback -->
+                        SVG not supported
+                    </object>
+                </div>
+                <h3>Data Freshness</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                    <span class="progress-value">95%</span>
+                </div>
+            </div>
+            
+            <div class="quality-card">
+                <div class="quality-icon">
+                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/decision-makers.svg') }}" class="quality-svg">
+                        <!-- Fallback -->
+                        SVG not supported
+                    </object>
+                </div>
+                <h3>Decision-Maker Rate</h3>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 97%"></div>
+                    </div>
+                    <span class="progress-value">97%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" id="sample-leads-cta">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Ready for high-quality leads?</h2>
+            <p class="cta-text">Get a customized lead package tailored to your business needs and target audience.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Request Full Sample</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab functionality for lead categories
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const categoryContents = document.querySelectorAll('.category-content');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                categoryContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const category = tab.dataset.category;
+                document.getElementById(`${category}-content`).classList.add('active');
+            });
+        });
+        
+        // Animation for progress bars
+        const progressBars = document.querySelectorAll('.progress-fill');
+        
+        const animateProgressBars = () => {
+            progressBars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s ease-in-out';
+                    bar.style.width = targetWidth;
+                }, 300);
+            });
+        };
+        
+        // Intersection Observer for progress bars
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const qualityMetrics = document.querySelector('.quality-metrics');
+        if (qualityMetrics) {
+            observer.observe(qualityMetrics);
+        }
+    });
+</script>
+{% endblock %}

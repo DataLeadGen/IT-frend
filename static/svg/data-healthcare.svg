@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="healthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#772CE8" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#772CE8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.8"/>
+    </linearGradient>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background grid -->
+  <g opacity="0.1">
+    <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800" stroke="#00F5FF" stroke-width="1"/>
+    <path d="M100 0 V300 M200 0 V300 M300 0 V300 M400 0 V300 M500 0 V300 M600 0 V300 M700 0 V300" stroke="#00F5FF" stroke-width="1"/>
+  </g>
+  
+  <!-- Medical cross icon -->
+  <g transform="translate(700, 80)">
+    <g fill="none" stroke="#00F5FF" stroke-width="2">
+      <rect x="-20" y="-20" width="40" height="40" rx="5"/>
+      <line x1="0" y1="-15" x2="0" y2="15"/>
+      <line x1="-15" y1="0" x2="15" y2="0"/>
+    </g>
+    
+    <animateTransform 
+      attributeName="transform"
+      type="translate"
+      from="700, 80"
+      to="700, 85"
+      dur="3s"
+      repeatCount="indefinite"
+      additive="sum"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+      values="700, 80; 700, 85; 700, 80"
+    />
+  </g>
+  
+  <!-- Heart rate monitor -->
+  <g transform="translate(100, 150)">
+    <!-- Heart rate line -->
+    <path d="M0,30 
+             L40,30 
+             L50,10 
+             L60,50 
+             L70,10 
+             L80,30 
+             L120,30
+             L130,10
+             L140,50
+             L150,10
+             L160,30
+             L200,30
+             L210,10
+             L220,50
+             L230,10
+             L240,30
+             L280,30
+             L290,10
+             L300,50
+             L310,10
+             L320,30
+             L360,30
+             L370,10
+             L380,50
+             L390,10
+             L400,30
+             L440,30
+             L450,10
+             L460,50
+             L470,10
+             L480,30
+             L520,30
+             L530,10
+             L540,50
+             L550,10
+             L560,30
+             L600,30" 
+          fill="none" 
+          stroke="url(#pulseGradient)" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          filter="url(#glow)"/>
+          
+    <!-- Animated heart monitor pulse -->
+    <g>
+      <circle cx="0" cy="30" r="3" fill="#00F5FF">
+        <animate attributeName="cx" values="0;600" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.8;1" dur="0.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Medical data elements -->
+  <g>
+    <!-- DNA helix -->
+    <g transform="translate(100, 60)">
+      <path d="M0,0 C20,-15 30,15 50,0 C70,-15 80,15 100,0 C120,-15 130,15 150,0" 
+            fill="none" 
+            stroke="#00F5FF" 
+            stroke-width="2"/>
+            
+      <path d="M0,40 C20,55 30,25 50,40 C70,55 80,25 100,40 C120,55 130,25 150,40" 
+            fill="none" 
+            stroke="#772CE8" 
+            stroke-width="2"/>
+            
+      <!-- DNA rungs -->
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#00F5FF" stroke-width="1"/>
+      <line x1="50" y1="0" x2="50" y2="40" stroke="#00F5FF" stroke-width="1"/>
+      <line x1="100" y1="0" x2="100" y2="40" stroke="#00F5FF" stroke-width="1"/>
+      <line x1="150" y1="0" x2="150" y2="40" stroke="#00F5FF" stroke-width="1"/>
+      
+      <animateTransform 
+        attributeName="transform"
+        type="translate"
+        from="100, 60"
+        to="75, 60"
+        dur="10s"
+        repeatCount="indefinite"
+        additive="sum"
+      />
+    </g>
+    
+    <!-- Medical data visualization -->
+    <g transform="translate(400, 50)">
+      <!-- Medical data chart -->
+      <rect x="0" y="0" width="200" height="15" rx="2" fill="#772CE8" opacity="0.7"/>
+      <rect x="0" y="25" width="150" height="15" rx="2" fill="#00F5FF" opacity="0.7"/>
+      <rect x="0" y="50" width="180" height="15" rx="2" fill="#772CE8" opacity="0.7"/>
+      <rect x="0" y="75" width="120" height="15" rx="2" fill="#00F5FF" opacity="0.7"/>
+      
+      <!-- Chart labels -->
+      <text x="-10" y="12" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="end">A</text>
+      <text x="-10" y="37" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="end">B</text>
+      <text x="-10" y="62" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="end">C</text>
+      <text x="-10" y="87" font-family="Arial, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="end">D</text>
+    </g>
+  </g>
+  
+  <!-- Medical icons -->
+  <g transform="translate(350, 250)">
+    <g fill="none" stroke="#772CE8" stroke-width="2">
+      <!-- Stethoscope -->
+      <circle cx="0" cy="0" r="10"/>
+      <path d="M0,10 C0,20 -20,20 -20,30 L-20,50"/>
+      <path d="M0,10 C0,20 20,20 20,30 L20,50"/>
+    </g>
+    
+    <animateTransform 
+      attributeName="transform"
+      type="translate"
+      from="350, 250"
+      to="350, 245"
+      dur="4s"
+      repeatCount="indefinite"
+      additive="sum"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+      values="350, 250; 350, 245; 350, 250"
+    />
+  </g>
+  
+  <g transform="translate(500, 250)">
+    <g fill="none" stroke="#00F5FF" stroke-width="2">
+      <!-- Pill/capsule -->
+      <path d="M-15,0 A15,15 0 0 1 15,0 A15,15 0 0 1 -15,0 Z"/>
+      <line x1="-10" y1="0" x2="10" y2="0"/>
+    </g>
+    
+    <animateTransform 
+      attributeName="transform"
+      type="translate"
+      from="500, 250"
+      to="500, 255"
+      dur="3.5s"
+      repeatCount="indefinite"
+      additive="sum"
+      calcMode="spline"
+      keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+      values="500, 250; 500, 255; 500, 250"
+    />
+  </g>
+  
+  <!-- Data connections -->
+  <g>
+    <path d="M150,220 C250,240 350,200 450,240 C550,270 650,220 750,250" 
+          fill="none" 
+          stroke="#00F5FF" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="100" dur="5s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M150,250 C250,230 350,270 450,230 C550,200 650,250 750,220" 
+          fill="none" 
+          stroke="#772CE8" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Medical data pulse -->
+  <g>
+    <circle cx="150" cy="220" r="5" fill="#00F5FF">
+      <animate attributeName="cx" values="150;750" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="750" cy="250" r="5" fill="#772CE8">
+      <animate attributeName="cx" values="750;150" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
