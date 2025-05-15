@@ -12,22 +12,22 @@
   --theme-transition: background-color 0.3s ease, color 0.3s ease;
   
   /* Shared colors between themes */
-  --accent-violet: #772CE8;      /* Electric Violet - accents, borders */
-  --highlight-cyan: #00F5FF;     /* Cosmic Cyan - interactive elements */
-  --cta-orange: #FF9100;         /* Solar Orange - CTA buttons */
+  --accent-blue: #3b5994;        /* Professional Blue - accents, borders */
+  --highlight-blue: #1a2d5a;     /* Deep Blue - interactive elements, text */
+  --cta-orange: #4285f4;         /* Brand Blue - CTA buttons */
   --highlight-yellow: #FFD700;   /* Plasma Glow Yellow - warnings, highlights */
   
   /* RGB Color values for rgba usage */
-  --accent-violet-rgb: 119, 44, 232;
-  --highlight-cyan-rgb: 0, 245, 255;
-  --cta-orange-rgb: 255, 145, 0;
+  --accent-blue-rgb: 59, 89, 148;
+  --highlight-blue-rgb: 26, 45, 90;
+  --cta-orange-rgb: 66, 133, 244;
   --highlight-yellow-rgb: 255, 215, 0;
-  --card-bg-rgb: 30, 30, 47;
+  --card-bg-rgb: 255, 255, 255;
   
   /* Additional effects */
-  --glow-cyan: 0 0 10px rgba(0, 245, 255, 0.7);
-  --glow-violet: 0 0 15px rgba(119, 44, 232, 0.6);
-  --glow-orange: 0 0 15px rgba(255, 145, 0, 0.7);
+  --glow-blue: 0 0 10px rgba(59, 89, 148, 0.3);
+  --glow-deep-blue: 0 0 15px rgba(26, 45, 90, 0.2);
+  --glow-cta: 0 0 15px rgba(66, 133, 244, 0.3);
 }
 
 /* Light Theme (default) */
@@ -54,7 +54,7 @@
   --light-overlay: rgba(248, 250, 255, 0.9);
   
   /* Color adaptations for light theme */
-  --hero-title-color: linear-gradient(120deg, #1a2d5a 0%, var(--highlight-cyan) 80%);
+  --hero-title-color: linear-gradient(120deg, #1a2d5a 0%, #3b5994 80%);
   --hero-text-color: #3b5994;
   --heading-color: #1a2d5a;
   --text-on-dark: #1a2d5a;
@@ -87,7 +87,7 @@
   --light-overlay: rgba(248, 249, 250, 0.03);
   
   /* Color adaptations for dark theme */
-  --hero-title-color: linear-gradient(120deg, #F8F9FA 0%, var(--highlight-cyan) 80%);
+  --hero-title-color: linear-gradient(120deg, #F8F9FA 0%, #4285f4 80%);
   --hero-text-color: #B0B0B0;
   --heading-color: #F8F9FA;
   --text-on-dark: #F8F9FA;
@@ -877,24 +877,24 @@ a:hover {
 
 .service-icon {
   font-size: 2.5rem;
-  color: var(--highlight-cyan);
+  color: #3b5994;
   margin-bottom: var(--spacing-sm);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  filter: drop-shadow(0 0 8px rgba(var(--highlight-cyan-rgb, 0, 245, 255), 0.3));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 5px rgba(59, 89, 148, 0.2));
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 70px;
   height: 70px;
-  border-radius: 20px;
-  background: rgba(var(--card-bg-rgb, 30, 30, 47), 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  background: rgba(237, 242, 255, 0.7);
+  border: 1px solid rgba(59, 89, 148, 0.1);
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.15) rotate(10deg);
-  filter: drop-shadow(0 0 15px rgba(var(--highlight-cyan-rgb, 0, 245, 255), 0.5));
-  background: rgba(var(--accent-violet-rgb, 119, 44, 232), 0.1);
+  transform: scale(1.08) rotate(5deg);
+  filter: drop-shadow(0 0 10px rgba(59, 89, 148, 0.3));
+  background: rgba(220, 230, 255, 0.9);
 }
 
 .service-title {
@@ -913,17 +913,17 @@ a:hover {
   left: 0;
   bottom: -5px;
   width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--highlight-cyan), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, #3b5994, rgba(59, 89, 148, 0.1));
   transition: width 0.3s ease;
 }
 
 .service-card:hover .service-title {
-  color: var(--highlight-cyan);
+  color: #1a2d5a;
 }
 
 .service-card:hover .service-title::after {
-  width: 100%;
+  width: 60%;
 }
 
 .service-description {
