@@ -33,34 +33,34 @@
 /* Light Theme (default) */
 :root {
   /* Main theme colors - Light */
-  --primary-bg: #f8f9fa;         /* Light background */
-  --accent-dark: #e9ecef;        /* Lighter accent for sections */
-  --text-color: #212529;         /* Dark text for contrast */
-  --text-secondary: #495057;     /* Secondary text color */
-  --text-muted: #6c757d;         /* Muted text color */
+  --primary-bg: #f8faff;         /* Light blue-tinted background */
+  --accent-dark: #edf2ff;        /* Lighter blue-tinted accent for sections */
+  --text-color: #1a2d5a;         /* Navy blue text for improved readability */
+  --text-secondary: #3b5994;     /* Medium blue for secondary text */
+  --text-muted: #6988c0;         /* Muted blue text color */
   --card-bg: #ffffff;            /* White card background */
-  --border-color: #dee2e6;       /* Light border color */
-  --section-bg: #f8f9fa;         /* Section background */
-  --section-alt-bg: #e9ecef;     /* Alternate section background */
+  --border-color: #d0deff;       /* Light blue border color */
+  --section-bg: #f8faff;         /* Section background */
+  --section-alt-bg: #edf2ff;     /* Alternate section background */
   
   /* RGB values for rgba usage - Light Theme */
-  --primary-bg-rgb: 248, 249, 250;
-  --accent-dark-rgb: 233, 236, 239;
-  --text-color-rgb: 33, 37, 41;
+  --primary-bg-rgb: 248, 250, 255;
+  --accent-dark-rgb: 237, 242, 255;
+  --text-color-rgb: 26, 45, 90;
   --card-bg-rgb: 255, 255, 255;
   
   /* Overlays for light theme */
-  --dark-overlay: rgba(33, 37, 41, 0.7);
-  --light-overlay: rgba(248, 249, 250, 0.9);
+  --dark-overlay: rgba(26, 45, 90, 0.7);
+  --light-overlay: rgba(248, 250, 255, 0.9);
   
   /* Color adaptations for light theme */
-  --hero-title-color: linear-gradient(120deg, #212529 0%, var(--highlight-cyan) 80%);
-  --hero-text-color: #495057;
-  --heading-color: #212529;
-  --text-on-dark: #212529;
-  --services-text-color: #212529;
-  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --section-title-color: #212529;
+  --hero-title-color: linear-gradient(120deg, #1a2d5a 0%, var(--highlight-cyan) 80%);
+  --hero-text-color: #3b5994;
+  --heading-color: #1a2d5a;
+  --text-on-dark: #1a2d5a;
+  --services-text-color: #1a2d5a;
+  --card-shadow: 0 10px 30px rgba(26, 45, 90, 0.08);
+  --section-title-color: #1a2d5a;
 }
 
 /* Dark Theme */
@@ -645,8 +645,8 @@ a:hover {
 
 .btn {
   display: inline-block;
-  padding: 0.9rem 2.2rem;
-  border-radius: 50px;
+  padding: 0.9rem 2.5rem;
+  border-radius: 12px;
   font-weight: 600;
   font-family: var(--font-secondary);
   text-transform: uppercase;
@@ -657,7 +657,7 @@ a:hover {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(26, 45, 90, 0.12);
   backdrop-filter: blur(5px);
 }
 
@@ -687,20 +687,19 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--cta-orange), #ff5e62);
+  background: linear-gradient(135deg, #3b5994, #1a2d5a);
   color: #fff;
   box-shadow: 
-    0 5px 15px rgba(255, 145, 0, 0.3),
-    0 0 0 1px rgba(255, 94, 98, 0.1),
-    inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+    0 5px 15px rgba(26, 45, 90, 0.3),
+    0 0 0 1px rgba(59, 89, 148, 0.2);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
+  background: linear-gradient(135deg, #4a6cb2, #263e78);
   box-shadow: 
-    0 8px 25px rgba(255, 145, 0, 0.4),
-    0 0 0 1px rgba(255, 94, 98, 0.2),
-    inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+    0 8px 25px rgba(26, 45, 90, 0.4),
+    0 0 0 1px rgba(59, 89, 148, 0.3);
 }
 
 .btn-secondary {
