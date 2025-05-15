@@ -1439,16 +1439,17 @@ textarea.form-control {
 .btn-submit {
   width: 100%;
   background: linear-gradient(135deg, #3b5994, #1a2d5a);
-  color: var(--text-white);
+  color: #ffffff;
   border: none;
   padding: 1rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  border-radius: 10px;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(26, 45, 90, 0.2);
 }
 
 .btn-submit::before {
@@ -1467,18 +1468,19 @@ textarea.form-control {
 }
 
 .btn-submit:hover {
-  box-shadow: 0 5px 15px rgba(0, 245, 255, 0.3);
+  box-shadow: 0 7px 20px rgba(26, 45, 90, 0.3);
   transform: translateY(-2px);
+  background: linear-gradient(135deg, #4a6cb2, #263e78);
 }
 
 /*=========================================
   Footer
 =========================================*/
 .footer {
-  background-color: var(--accent-dark);
+  background-color: #edf2ff;
   padding: var(--spacing-lg) 0;
   position: relative;
-  border-top: 1px solid rgba(119, 44, 232, 0.2);
+  border-top: 1px solid rgba(59, 89, 148, 0.1);
 }
 
 .footer-grid {
@@ -1511,9 +1513,9 @@ textarea.form-control {
 }
 
 .footer-link a {
-  color: var(--text-white);
+  color: #3b5994;
   opacity: 0.8;
-  transition: all var(--transition-fast);
+  transition: all 0.3s ease;
 }
 
 .footer-link a:hover {
