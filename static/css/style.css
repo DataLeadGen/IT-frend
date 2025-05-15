@@ -348,33 +348,33 @@ a:hover {
   align-items: center;
   position: relative;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, var(--text-color) 0%, var(--highlight-cyan) 70%);
+  background: linear-gradient(135deg, #1a2d5a 0%, #3b5994 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
 }
 
 .logo span {
-  color: var(--highlight-cyan);
+  color: #4285f4;
   position: relative;
-  -webkit-text-fill-color: var(--highlight-cyan);
+  -webkit-text-fill-color: #4285f4;
 }
 
 .logo span::after {
   content: '';
   position: absolute;
   width: 110%;
-  height: 5px;
-  background: linear-gradient(90deg, transparent, var(--highlight-cyan), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #4285f4, transparent);
   bottom: 5px;
   left: -5%;
-  filter: blur(4px);
-  opacity: 0.7;
+  filter: blur(3px);
+  opacity: 0.5;
 }
 
 .logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(var(--highlight-cyan-rgb), 0.5));
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 5px rgba(59, 89, 148, 0.3));
 }
 
 .nav-menu {
@@ -678,8 +678,8 @@ a:hover {
 }
 
 .btn:hover {
-  transform: translateY(-5px) scale(1.03);
-  letter-spacing: 2px;
+  transform: translateY(-3px);
+  letter-spacing: 1px;
 }
 
 .btn:active {
