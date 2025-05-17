@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(90deg, var(--text-white) 0%, var(--highlight-cyan) 100%);
+  background: linear-gradient(90deg, #0a1e4b 0%, #3b5994 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -223,14 +223,15 @@ h2::after {
   bottom: -10px;
   width: 60px;
   height: 4px;
-  background: var(--accent-violet);
+  background: linear-gradient(90deg, #3b5994, #1a2d5a);
   border-radius: 2px;
-  box-shadow: var(--glow-violet);
+  box-shadow: 0 4px 12px rgba(59, 89, 148, 0.2);
 }
 
 h3 {
   font-size: 1.8rem;
-  color: var(--highlight-cyan);
+  color: #0a1e4b;
+  font-weight: 600;
 }
 
 p {
