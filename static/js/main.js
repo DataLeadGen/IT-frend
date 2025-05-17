@@ -75,12 +75,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking a nav link
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        navMenu.classList.remove('active');
+        if (navMenu) {
+          navMenu.classList.remove('active');
+        }
         
-        // Reset icon
-        const iconElement = navToggle.querySelector('i');
-        iconElement.classList.remove('feather-x');
-        iconElement.classList.add('feather-menu');
+        // Reset icon if navToggle exists
+        if (navToggle) {
+          const iconElement = navToggle.querySelector('i');
+          if (iconElement) {
+            iconElement.classList.remove('feather-x');
+            iconElement.classList.add('feather-menu');
+          }
+        }
         
         // Update active link
         navLinks.forEach(navLink => navLink.classList.remove('active'));
@@ -90,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set active nav link based on scroll position
     window.addEventListener('scroll', function() {
+      if (navLinks.length === 0) return;
+      
       let current = '';
       
       const sections = document.querySelectorAll('section[id]');
@@ -103,12 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
-      });
+      if (current) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          const href = link.getAttribute('href');
+          if (href && href.includes(current)) {
+            link.classList.add('active');
+          }
+        });
+      }
     });
     
     // Smooth scrolling for anchor links
