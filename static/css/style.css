@@ -351,19 +351,17 @@ a:hover {
   font-family: var(--font-secondary);
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--text-color);
   display: flex;
   align-items: center;
   position: relative;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #1a2d5a 0%, #3b5994 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0a1e4b;
   transition: all 0.3s ease;
 }
 
 .logo span {
   color: #4285f4;
+  font-weight: 900;
   position: relative;
   -webkit-text-fill-color: #4285f4;
 }
@@ -374,9 +372,9 @@ a:hover {
   width: 110%;
   height: 3px;
   background: linear-gradient(90deg, transparent, #4285f4, transparent);
-  bottom: 5px;
+  bottom: 3px;
   left: -5%;
-  filter: blur(3px);
+  filter: blur(2px);
   opacity: 0.5;
 }
 
