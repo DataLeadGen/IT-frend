@@ -1150,7 +1150,7 @@ a:hover {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--highlight-cyan), var(--accent-violet));
+  background: linear-gradient(90deg, #3b5994, #1a2d5a);
   border-radius: 2px;
 }
 
@@ -1505,7 +1505,8 @@ textarea.form-control {
 .footer-heading {
   font-size: 1.2rem;
   margin-bottom: var(--spacing-sm);
-  color: var(--highlight-cyan);
+  color: #0a1e4b;
+  font-weight: 700;
 }
 
 .footer-links {
