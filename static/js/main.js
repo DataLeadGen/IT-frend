@@ -403,5 +403,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('specialized-services-container')) {
       revealContent('specialized-services-container');
     }
+    
+    if (document.getElementById('main-services-container')) {
+      revealContent('main-services-container');
+    }
   }
 });

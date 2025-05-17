@@ -26,38 +26,78 @@
     <div class="container">
         <h2 class="text-center mb-5 fade-in">Core Services</h2>
         
-        <!-- B2B Lead Generation -->
-        <div class="row align-items-center mb-5">
-            <div class="col-lg-6 fade-in">
-                <div class="service-image">
-                    <object type="image/svg+xml" data="{{ url_for('static', filename='svg/service-lead-database.svg') }}"
-                            class="svg-animation-container" 
-                            aria-label="B2B Lead Generation">
-                        <!-- Fallback for older browsers -->
-                        <img src="{{ url_for('static', filename='svg/service-lead-database.svg') }}"
-                             alt="B2B Lead Generation"
-                             class="img-fluid rounded shadow">
-                    </object>
+        <!-- Main Services Content Container -->
+        <div id="main-services-container">
+            <!-- B2B Lead Generation Skeleton -->
+            <div class="row align-items-center mb-5 skeleton-container">
+                <div class="col-lg-6">
+                    <div class="skeleton-loader" style="height: 300px; border-radius: 8px;"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skeleton-loader skeleton-title"></div>
+                    <div class="skeleton-loader skeleton-text"></div>
+                    <div class="skeleton-loader skeleton-text"></div>
+                    <div class="skeleton-loader skeleton-text"></div>
+                    <div class="skeleton-loader skeleton-title mt-4" style="width: 40%;"></div>
+                    <div class="skeleton-loader skeleton-text" style="width: 80%;"></div>
+                    <div class="skeleton-loader skeleton-text" style="width: 85%;"></div>
+                    <div class="skeleton-loader skeleton-text" style="width: 75%;"></div>
+                    <div class="skeleton-loader skeleton-text" style="width: 90%;"></div>
+                    <div class="skeleton-loader skeleton-text" style="width: 70%;"></div>
                 </div>
             </div>
-            <div class="col-lg-6 fade-in">
-                <h3>B2B Lead Generation</h3>
-                <p>
-                    Our comprehensive B2B lead generation service connects you with qualified prospects who are likely to be interested in your products or services. We identify and qualify potential customers based on your specific requirements and target audience.
-                </p>
-                <h4 class="mt-4 text-highlight">What We Deliver:</h4>
-                <ul>
-                    <li>Targeted contact lists of decision-makers</li>
-                    <li>Company details including size, industry, and location</li>
-                    <li>Verified contact information (email, phone, LinkedIn)</li>
-                    <li>Custom segmentation based on your criteria</li>
-                    <li>Regular updates to ensure data accuracy</li>
-                </ul>
+        
+            <!-- B2B Lead Generation Real Content -->
+            <div class="row align-items-center mb-5 content-hidden real-content">
+                <div class="col-lg-6 fade-in">
+                    <div class="service-image">
+                        <object type="image/svg+xml" data="{{ url_for('static', filename='svg/service-lead-database.svg') }}"
+                                class="svg-animation-container" 
+                                aria-label="B2B Lead Generation">
+                            <!-- Fallback for older browsers -->
+                            <img src="{{ url_for('static', filename='svg/service-lead-database.svg') }}"
+                                 alt="B2B Lead Generation"
+                                 class="img-fluid rounded shadow">
+                        </object>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <h3>B2B Lead Generation</h3>
+                    <p>
+                        Our comprehensive B2B lead generation service connects you with qualified prospects who are likely to be interested in your products or services. We identify and qualify potential customers based on your specific requirements and target audience.
+                    </p>
+                    <h4 class="mt-4 text-highlight">What We Deliver:</h4>
+                    <ul>
+                        <li>Targeted contact lists of decision-makers</li>
+                        <li>Company details including size, industry, and location</li>
+                        <li>Verified contact information (email, phone, LinkedIn)</li>
+                        <li>Custom segmentation based on your criteria</li>
+                        <li>Regular updates to ensure data accuracy</li>
+                    </ul>
+                </div>
+            </div>
+        
+        <!-- Data Mining & List Building Skeleton -->
+        <div class="row align-items-center mb-5 flex-lg-row-reverse skeleton-container">
+            <div class="col-lg-6">
+                <div class="skeleton-loader" style="height: 300px; border-radius: 8px;"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skeleton-loader skeleton-title"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-title mt-4" style="width: 40%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 80%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 75%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 90%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 85%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 70%;"></div>
             </div>
         </div>
         
-        <!-- Data Mining & List Building -->
-        <div class="row align-items-center mb-5 flex-lg-row-reverse">
+        <!-- Data Mining & List Building Real Content -->
+        <div class="row align-items-center mb-5 flex-lg-row-reverse content-hidden real-content">
             <div class="col-lg-6 fade-in">
                 <div class="service-image">
                     <object type="image/svg+xml" data="{{ url_for('static', filename='svg/service-data-cleansing.svg') }}"
@@ -86,8 +126,27 @@
             </div>
         </div>
         
-        <!-- CRM Data Management -->
-        <div class="row align-items-center mb-5">
+        <!-- CRM Data Management Skeleton -->
+        <div class="row align-items-center mb-5 skeleton-container">
+            <div class="col-lg-6">
+                <div class="skeleton-loader" style="height: 300px; border-radius: 8px;"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skeleton-loader skeleton-title"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-title mt-4" style="width: 40%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 85%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 90%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 75%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 80%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 95%;"></div>
+            </div>
+        </div>
+        
+        <!-- CRM Data Management Real Content -->
+        <div class="row align-items-center mb-5 content-hidden real-content">
             <div class="col-lg-6 fade-in">
                 <div class="service-image">
                     <object type="image/svg+xml" data="{{ url_for('static', filename='svg/service-linkedin-network.svg') }}"
@@ -116,8 +175,27 @@
             </div>
         </div>
         
-        <!-- Email & Contact Extraction -->
-        <div class="row align-items-center mb-5 flex-lg-row-reverse">
+        <!-- Email & Contact Extraction Skeleton -->
+        <div class="row align-items-center mb-5 flex-lg-row-reverse skeleton-container">
+            <div class="col-lg-6">
+                <div class="skeleton-loader" style="height: 300px; border-radius: 8px;"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skeleton-loader skeleton-title"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-text"></div>
+                <div class="skeleton-loader skeleton-title mt-4" style="width: 40%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 75%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 80%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 95%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 70%;"></div>
+                <div class="skeleton-loader skeleton-text" style="width: 85%;"></div>
+            </div>
+        </div>
+        
+        <!-- Email & Contact Extraction Real Content -->
+        <div class="row align-items-center mb-5 flex-lg-row-reverse content-hidden real-content">
             <div class="col-lg-6 fade-in">
                 <div class="service-image">
                     <object type="image/svg+xml" data="{{ url_for('static', filename='svg/service-market-research.svg') }}"
