@@ -786,23 +786,23 @@ a:hover {
 
 .stat-item {
   padding: var(--spacing-sm);
-  background: rgba(30, 30, 47, 0.6);
-  border-left: 3px solid var(--accent-violet);
-  border-radius: 4px;
-  transition: all var(--transition-fast);
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 3px solid #3b5994;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .stat-item:hover {
   transform: translateY(-5px);
-  box-shadow: var(--glow-violet);
-  border-left-color: var(--highlight-cyan);
+  box-shadow: 0 10px 25px rgba(59, 89, 148, 0.2);
+  border-left-color: #1a2d5a;
 }
 
 .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
-  color: var(--highlight-cyan);
+  color: #0a1e4b;
   font-family: var(--font-secondary);
 }
 
