@@ -35,9 +35,9 @@
   /* Main theme colors - Light */
   --primary-bg: #f8faff;         /* Light blue-tinted background */
   --accent-dark: #edf2ff;        /* Lighter blue-tinted accent for sections */
-  --text-color: #1a2d5a;         /* Navy blue text for improved readability */
-  --text-secondary: #3b5994;     /* Medium blue for secondary text */
-  --text-muted: #6988c0;         /* Muted blue text color */
+  --text-color: #0a1e4b;         /* Darker navy blue text for improved readability */
+  --text-secondary: #2a487d;     /* Darker medium blue for secondary text */
+  --text-muted: #4d6da3;         /* Darker muted blue text color */
   --card-bg: #ffffff;            /* White card background */
   --border-color: #d0deff;       /* Light blue border color */
   --section-bg: #f8faff;         /* Section background */
@@ -1520,7 +1520,7 @@ textarea.form-control {
 
 .footer-link a:hover {
   opacity: 1;
-  color: var(--highlight-cyan);
+  color: #4285f4;
   padding-left: 5px;
 }
 
