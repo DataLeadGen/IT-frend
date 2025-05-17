@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initBackToTop();
   initContactForm();
   initThemeToggle();
+  initSkeletonLoaders();
   
   // Preloader
   function initPreloader() {
@@ -365,6 +366,42 @@ document.addEventListener('DOMContentLoaded', function() {
           localStorage.setItem('theme', 'light');
         }
       });
+    }
+  }
+  
+  // Skeleton Loading Animation
+  function initSkeletonLoaders() {
+    // Function to reveal content with skeletons
+    function revealContent(containerId) {
+      const container = document.getElementById(containerId);
+      
+      if (container) {
+        // Simulate loading delay
+        setTimeout(() => {
+          // Hide skeleton loaders
+          const skeletons = container.querySelectorAll('.skeleton-container');
+          skeletons.forEach(skeleton => {
+            skeleton.style.display = 'none';
+          });
+          
+          // Show actual content
+          container.classList.add('content-loaded');
+          const contentElements = container.querySelectorAll('.real-content');
+          contentElements.forEach(element => {
+            element.classList.remove('content-hidden');
+            // Re-initialize Feather icons if needed
+            const featherIcons = element.querySelectorAll('[data-feather]');
+            if (featherIcons.length > 0) {
+              feather.replace(featherIcons);
+            }
+          });
+        }, 1500); // Delay in milliseconds before showing content
+      }
+    }
+    
+    // Initialize skeleton loaders for different sections
+    if (document.getElementById('specialized-services-container')) {
+      revealContent('specialized-services-container');
     }
   }
 });
