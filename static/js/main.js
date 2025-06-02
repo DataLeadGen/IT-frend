@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initParticles();
   initBackToTop();
   initContactForm();
-  initThemeToggle();
   initSkeletonLoaders();
   
   // Preloader
@@ -338,36 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Theme Toggle functionality
-  function initThemeToggle() {
-    const themeSwitch = document.getElementById('theme-switch');
-    
-    if (themeSwitch) {
-      // Check for saved theme preference
-      const savedTheme = localStorage.getItem('theme');
-      
-      // If saved theme is dark, set dark mode
-      if (savedTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeSwitch.checked = true;
-      } else {
-        // Default to light theme (remove dark theme attribute if present)
-        document.documentElement.removeAttribute('data-theme');
-        themeSwitch.checked = false;
-      }
-      
-      // Theme toggle event listener
-      themeSwitch.addEventListener('change', function() {
-        if (this.checked) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          document.documentElement.removeAttribute('data-theme');
-          localStorage.setItem('theme', 'light');
-        }
-      });
-    }
-  }
+
   
   // Skeleton Loading Animation
   function initSkeletonLoaders() {

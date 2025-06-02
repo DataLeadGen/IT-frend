@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for contacting IT FRNDLeads</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .email-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #772ce8 0%, #00f5ff 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            margin: -30px -30px 20px -30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #00f5ff;
+            margin: 20px 0;
+        }
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .contact-info h3 {
+            color: #772ce8;
+            margin-top: 0;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #772ce8 0%, #00f5ff 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Thank You for Contacting Us!</h1>
+            <p>IT FRNDLeads</p>
+        </div>
+        
+        <div class="content">
+            <p>Dear {{ name }},</p>
+            
+            <p>Thank you for reaching out to IT FRNDLeads. We have received your message and appreciate your interest in our B2B data services.</p>
+            
+            <div class="highlight-box">
+                <h3>What happens next?</h3>
+                <ul>
+                    <li>Our team will review your message within 2-4 hours</li>
+                    <li>We will respond to your inquiry within 24 hours</li>
+                    <li>If urgent, feel free to call us directly</li>
+                </ul>
+            </div>
+            
+            <h3>Your Message Summary:</h3>
+            <p><strong>Subject:</strong> {{ subject }}</p>
+            <p><strong>Message:</strong></p>
+            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; white-space: pre-wrap;">{{ message }}</div>
+            
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> naeem@theitfrnd.com</p>
+                <p><strong>Phone:</strong> +91 786-987-4458</p>
+                <p><strong>Business Hours:</strong> Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                <p><strong>Location:</strong> Burhanpur, Madhya Pradesh, India</p>
+            </div>
+            
+            <p>In the meantime, feel free to explore our services and learn more about how we can help your business grow with high-quality B2B data.</p>
+            
+            <p style="text-align: center;">
+                <a href="https://theitfrnd.com/services" class="button">Explore Our Services</a>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Best regards,<br>
+            IT FRNDLeads Team</p>
+            <p>This is an automated confirmation email. Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,8 +2,8 @@
     <div class="container">
         <div class="nav-container">
             <a href="{{ url_for('index') }}" class="logo">
-              <!--  IT <span>FRND</span>  -->
-                <span> IT Frnd </span>
+                <img src="{{ url_for('static', filename='svg/itfrnd_logo.jpeg') }}" alt="IT Frnd Logo" class="logo-image">
+                
             </a>
             <button class="nav-toggle" aria-label="Toggle Navigation">
                 <i data-feather="menu"></i>
@@ -25,10 +25,7 @@
                 <li class="nav-item">
                     <a href="{{ url_for('contact') }}" class="nav-link {% if request.path == url_for('contact') %}active{% endif %}">Contact</a>
                 </li>
-                <li class="nav-item theme-toggle">
-                    <input type="checkbox" id="theme-switch" aria-label="Toggle between light and dark mode">
-                    <label for="theme-switch" class="theme-toggle-label"></label>
-                </li>
+
             </ul>
         </div>
     </div>

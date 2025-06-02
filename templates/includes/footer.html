@@ -1,97 +1,201 @@
 <footer class="footer">
     <div class="container">
-        <div class="footer-grid">
-            <!-- Company Info -->
-            <div class="footer-info">
-                <a href="{{ url_for('index') }}" class="logo mb-3">
-                    IT <span>FRND</span>
-                </a>
-                <p class="footer-description">
-                    We are a small light in the hard darkness for your business. Delivering approachable, accurate, and effective B2B data solutions.
-                </p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <i data-feather="linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i data-feather="twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <i data-feather="facebook"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <i data-feather="instagram"></i>
-                    </a>
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-grid">
+                <!-- Company Info Section -->
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo-wrapper">
+                        <a href="{{ url_for('index') }}" class="footer-logo">
+                            <img src="{{ url_for('static', filename='svg/itfrnd_logo.jpeg') }}" alt="IT Frnd Logo" class="footer-logo-image">
+                            
+                        </a>
+                        <div class="footer-tagline">
+        
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        We are a small light in the hard darkness for your business. Delivering approachable, accurate, and effective B2B data solutions that drive growth and success.
+                    </p>    
+                    <div class="footer-social">
+                        <h5 class="social-title">Follow Us</h5>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter" title="Twitter">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+                                <i data-feather="facebook"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                                <i data-feather="instagram"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Services Links -->
-            <div class="footer-links">
-                <h4 class="footer-heading">Services</h4>
-                <ul class="footer-links">
-                    <li class="footer-link"><a href="{{ url_for('services') }}#lead-generation">B2B Lead Generation</a></li>
-                    <li class="footer-link"><a href="{{ url_for('services') }}#data-mining">Data Mining & List Building</a></li>
-                    <li class="footer-link"><a href="{{ url_for('services') }}#crm-management">CRM Data Management</a></li>
-                    <li class="footer-link"><a href="{{ url_for('services') }}#contact-extraction">Email & Contact Extraction</a></li>
-                    <li class="footer-link"><a href="{{ url_for('services') }}#data-cleansing">Data Cleansing & Validation</a></li>
-                </ul>
-            </div>
-            
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <h4 class="footer-heading">Quick Links</h4>
-                <ul class="footer-links">
-                    <li class="footer-link"><a href="{{ url_for('index') }}">Home</a></li>
-                    <li class="footer-link"><a href="{{ url_for('about') }}">About Us</a></li>
-                    <li class="footer-link"><a href="{{ url_for('services') }}">Services</a></li>
-                    <li class="footer-link"><a href="{{ url_for('contact') }}">Contact Us</a></li>
-                    <li class="footer-link"><a href="{{ url_for('contact') }}#faqAccordion">FAQ</a></li>
-                </ul>
-            </div>
-            
-            <!-- Contact Info -->
-            <div class="footer-links">
-                <h4 class="footer-heading">Contact Us</h4>
-                <ul class="footer-links">
-                    <li class="footer-link">
-                        <a href="tel:+917869874458">
-                            <i data-feather="phone" class="icon-sm me-2"></i> +91 786-987-4458
-                        </a>
-                    </li>
-                    <li class="footer-link">
-                        <a href="mailto:info@theitfrnd.com">
-                            <i data-feather="mail" class="icon-sm me-2"></i> info@theitfrnd.com
-                        </a>
-                    </li>
-                    <li class="footer-link">
-                        <a href="https://maps.google.com/?q=Burhanpur,+Madhya+Pradesh" target="_blank">
-                            <i data-feather="map-pin" class="icon-sm me-2"></i> Burhanpur, Madhya Pradesh
-                        </a>
-                    </li>
-                    <li class="footer-link">
-                        <a href="https://theitfrnd.com">
-                            <i data-feather="globe" class="icon-sm me-2"></i> theitfrnd.com
-                        </a>
-                    </li>
-                </ul>
+                
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">
+                        <i data-feather="briefcase" class="heading-icon"></i>
+                        Our Services
+                    </h4>
+                    <ul class="footer-links">
+                        <li class="footer-link">
+                            <a href="{{ url_for('services') }}#lead-generation">
+                                <i data-feather="target" class="link-icon"></i>
+                                B2B Lead Generation
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('services') }}#data-mining">
+                                <i data-feather="database" class="link-icon"></i>
+                                Data Mining & List Building
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('services') }}#crm-management">
+                                <i data-feather="users" class="link-icon"></i>
+                                CRM Data Management
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('services') }}#contact-extraction">
+                                <i data-feather="mail" class="link-icon"></i>
+                                Email & Contact Extraction
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('services') }}#data-cleansing">
+                                <i data-feather="filter" class="link-icon"></i>
+                                Data Cleansing & Validation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">
+                        <i data-feather="navigation" class="heading-icon"></i>
+                        Quick Links
+                    </h4>
+                    <ul class="footer-links">
+                        <li class="footer-link">
+                            <a href="{{ url_for('index') }}">
+                                <i data-feather="home" class="link-icon"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('about') }}">
+                                <i data-feather="info" class="link-icon"></i>
+                                About Us
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('services') }}">
+                                <i data-feather="grid" class="link-icon"></i>
+                                Services
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('contact') }}">
+                                <i data-feather="message-circle" class="link-icon"></i>
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="{{ url_for('contact') }}#faqAccordion">
+                                <i data-feather="help-circle" class="link-icon"></i>
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info Section -->
+                <div class="footer-section">
+                    <h4 class="footer-heading">
+                        <i data-feather="phone" class="heading-icon"></i>
+                        Get In Touch
+                    </h4>
+                    <ul class="footer-contact">
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i data-feather="phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Call Us</span>
+                                <a href="tel:+917869874458" class="contact-value">+91 916564343</a>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email Us</span>
+                                <a href="mailto:info@theitfrnd.com" class="contact-value">shahrukh@theitfrnd.com</a>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i data-feather="map-pin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Location</span>
+                                <a href="https://maps.google.com/?q=Burhanpur,+Madhya+Pradesh" target="_blank" class="contact-value">Burhanpur, Madhya Pradesh</a>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i data-feather="globe"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Website</span>
+                                <a href="https://theitfrnd.com" target="_blank" class="contact-value">theitfrnd.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <div class="copyright">
-                &copy; 2025 IT FRNDLeads. All Rights Reserved. <br>
-                <span class="small">Built with <i data-feather="heart" style="width: 12px; height: 12px; color: var(--cta-orange);"></i> in Burhanpur, India</span>
-            </div>
-            <div class="footer-legal">
-                <a href="#">Privacy Policy</a>
-                <span class="mx-2">|</span>
-                <a href="#">Terms of Service</a>
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p class="copyright-text">
+                        &copy; 2025 <strong>IT FRNDLeads</strong>. All Rights Reserved.
+                    </p>
+                    <p class="made-with-love">
+                        Built with <i data-feather="heart" class="heart-icon"></i> in Burhanpur, India
+                    </p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="legal-link">Terms of Service</a>
+                    <span class="separator">•</span>
+                    <a href="#" class="legal-link">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </div>
+    
+    <!-- Footer Background Elements -->
+    <div class="footer-bg-elements">
+        <div class="footer-shape footer-shape-1"></div>
+        <div class="footer-shape footer-shape-2"></div>
+        <div class="footer-shape footer-shape-3"></div>
+    </div>
 </footer>
 
-<a href="#" class="back-to-top" aria-label="Back to top">
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" aria-label="Back to top" title="Back to top">
     <i data-feather="arrow-up"></i>
+    <span class="back-to-top-text">Top</span>
 </a>

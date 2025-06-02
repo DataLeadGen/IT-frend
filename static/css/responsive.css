@@ -56,7 +56,20 @@
   
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md) var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+  
+  .footer-brand {
+    padding-right: 0;
+  }
+  
+  .contact-item {
+    padding: 0.6rem;
+  }
+  
+  .contact-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -175,13 +188,64 @@
   
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
   }
   
-  .footer-bottom {
-    flex-direction: column;
-    gap: var(--spacing-sm);
+  .footer-logo-wrapper {
+    justify-content: center;
     text-align: center;
+  }
+  
+  .footer-description {
+    text-align: center;
+  }
+  
+  .footer-social {
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer-heading {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-contact {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-item {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .footer-legal {
+    justify-content: center;
+  }
+  
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .back-to-top-text {
+    font-size: 0.65rem;
   }
 }
 
@@ -217,9 +281,48 @@
   
   .contact-item {
     flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .contact-icon {
+    margin: 0 auto var(--spacing-xs);
   }
   
-  .contact-icon {
-    margin-bottom: var(--spacing-xs);
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .social-links {
+    gap: 0.6rem;
+  }
+  
+  .social-link {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .footer-heading {
+    font-size: 1rem;
+  }
+  
+  .footer-shape {
+    display: none;
+  }
+  
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .back-to-top-text {
+    display: none;
   }
 }
